@@ -5,5 +5,7 @@ module.exports = {
   siteMetadata: {
     title: "team-lightning",
   },
-  plugins: ["gatsby-plugin-gatsby-cloud"],
+  plugins: [
+    "gatsby-plugin-gatsby-cloud"
+  ],
 };
