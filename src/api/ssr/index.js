@@ -9,6 +9,7 @@ const App = ({ name = 'World' }) => (
  * This is a POC to render a React component via an API (SSR)
  * It takes dynamic data (e.g. a query param currently)
  * and returns dynamic HTML SSR'd via React
+ * This is currently _actually_ static and does not hydrate on client
  */
 export default async function SSR(req, res) {
   const { name } = req.query
