@@ -7,10 +7,9 @@ const url =
     : "http://localhost:8000/gatsby-release.png";
 
 export default async function socialCard(req, res) {
-  const imageRes = await fetch("http://localhost:8000/gatsby-release.png");
+  const imageRes = await fetch(url);
   const imageBuffer = await imageRes.buffer();
 
-  console.log(Jimp);
   // load font converted from from https://ttf2fnt.com/
   // we might get around having to provide bespoke font files per font color,
   // @see https://github.com/oliver-moran/jimp/issues/537#issuecomment-533831077 ff.
@@ -22,9 +21,11 @@ export default async function socialCard(req, res) {
   // const nameFont = await Jimp.loadFont(`font/Inter-ExtraBold-56e/Inter-ExtraBold-56e.fnt`)
   // these fonts can't have their size or color changed programmatically
   // you have to convert an entirely new font into a .fnt
+  const font = Jimp.loadFont(Jimp.FONT_SANS_10_BLACK);
 
   // open a file called "template.png"
   const image = await Jimp.read(imageBuffer);
+  image.print(font, 100, 176, "hello", 618);
   // image.
   // res.send;
   // }
