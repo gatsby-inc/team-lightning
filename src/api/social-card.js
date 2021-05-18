@@ -7,9 +7,14 @@ const url =
     : "http://localhost:8000/gatsby-release.png";
 
 export default async function socialCard(req, res) {
+  const { text = "YOUR TEXT" } = req.query;
   const imageRes = await fetch(url);
   const imageBuffer = await imageRes.buffer();
-
+  // const fontRes = await fetch(
+  //   "https://raw.githubusercontent.com/oliver-moran/jimp/master/packages/plugin-print/fonts/open-sans/open-sans-10-black/open-sans-10-black.fnt"
+  // );
+  // const fontBuffer = await fontRes.buffer();
+  // console.log({ fontBuffer });
   // load font converted from from https://ttf2fnt.com/
   // we might get around having to provide bespoke font files per font color,
   // @see https://github.com/oliver-moran/jimp/issues/537#issuecomment-533831077 ff.
@@ -21,17 +26,28 @@ export default async function socialCard(req, res) {
   // const nameFont = await Jimp.loadFont(`font/Inter-ExtraBold-56e/Inter-ExtraBold-56e.fnt`)
   // these fonts can't have their size or color changed programmatically
   // you have to convert an entirely new font into a .fnt
-  const font = Jimp.loadFont(Jimp.FONT_SANS_10_BLACK);
+  const font = await Jimp.loadFont(
+    "https://raw.githubusercontent.com/oliver-moran/jimp/master/packages/plugin-print/fonts/open-sans/open-sans-128-black/open-sans-128-black.fnt"
+  );
 
   // open a file called "template.png"
   const image = await Jimp.read(imageBuffer);
-  // image.print(font, 100, 176, "hello", 618);
-  // image.
-  // res.send;
-  // }
 
-  // image.write(res);
-  res.setHeader("Content-Type", "image/png");
-  res.status(200).send(await image.getBufferAsync(Jimp.MIME_PNG));
-  // transformImage({ firstname: "Kyle", lastname: "Gill", number: 6999})
+  const [width, height] = [
+    Jimp.measureText(font, text),
+    Jimp.measureTextHeight(font, text),
+  ];
+
+  // fontFile, x coord, y coord, text, maxWidth
+  image.print(
+    font,
+    image.getWidth() / 2 - width / 2,
+    image.getHeight() / 2 - height / 2,
+    text
+  );
+
+  return res
+    .header("Content-Type", "image.png")
+    .status(200)
+    .send(await image.getBufferAsync(Jimp.MIME_PNG));
 }
