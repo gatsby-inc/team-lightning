@@ -47,7 +47,7 @@ export default async function socialCard(req, res) {
   );
 
   return res
-    .header("Content-Type", "image.png")
+    .header("Content-Type", "image/png")
     .status(200)
     .send(await image.getBufferAsync(Jimp.MIME_PNG));
 }
