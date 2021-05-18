@@ -25,13 +25,13 @@ export default async function socialCard(req, res) {
 
   // open a file called "template.png"
   const image = await Jimp.read(imageBuffer);
-  image.print(font, 100, 176, "hello", 618);
+  // image.print(font, 100, 176, "hello", 618);
   // image.
   // res.send;
   // }
 
   // image.write(res);
   res.setHeader("Content-Type", "image/png");
-  res.send(await image.getBufferAsync(Jimp.MIME_PNG));
+  res.status(200).send(await image.getBufferAsync(Jimp.MIME_PNG));
   // transformImage({ firstname: "Kyle", lastname: "Gill", number: 6999})
 }
