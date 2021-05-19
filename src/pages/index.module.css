@@ -93,6 +93,12 @@
     font-family: var(--font-body);
 }
 
+
+/* add spacing between every direct element */
+.main > * + * {
+    margin-bottom: var(--space-lg);
+}
+
 .input {
     appearance: none;
     font-size: var(--text-md);
@@ -138,4 +144,8 @@
 .image {
     width: 100%;
     box-shadow: var(--shadow);
+}
+
+.pointer {
+    cursor: pointer;
 }
