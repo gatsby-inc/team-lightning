@@ -20,8 +20,8 @@ const IndexPage = () => {
   const [imageVersion, setImageVersion] = React.useState('')
   const url = getUrl(version)
 
-  const requestImage = React.useCallback(debounce((e) => {
-    setImageVersion(e.target.value)
+  const requestImage = React.useCallback(debounce((value) => {
+    setImageVersion(value)
   }, 300), []);
 
   const onChange = React.useCallback(e => {
