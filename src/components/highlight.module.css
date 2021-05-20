@@ -1,0 +1,30 @@
+.highlight {
+  position: relative;
+  max-width: 100%;
+}
+
+.pre {
+  display: inline-block;
+  padding: var(--space-2xl);
+  border-radius: var(--radius-md);
+  min-width: 100%;
+}
+
+.code {
+  display: block;
+  float: left;
+  min-width: 100%;
+  background-color: inherit;
+  padding: 0;
+}
+
+.copy, .copy[disabled] {
+  position: absolute;
+  top: calc(var(--radius-md) + var(--radius-sm));
+  right: 0;
+  color: var(--grey-20);
+}
+
+.copy:not([disabled]):hover, .copy {
+  color: var(--white);
+}
