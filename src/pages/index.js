@@ -68,7 +68,7 @@ const IndexPage = () => {
                 id="landscape"
                 name="format"
                 value="landscape"
-                selected={activeFormat === "landscape"}
+                checked={activeFormat === "landscape"}
                 onChange={selectFormat}
               />
               Landscape
@@ -79,7 +79,7 @@ const IndexPage = () => {
                 id="format-square"
                 name="format"
                 value="square"
-                selected={activeFormat === "square"}
+                checked={activeFormat === "square"}
                 onChange={selectFormat}
               />
               Square
