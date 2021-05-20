@@ -115,6 +115,8 @@
 
 .overflow {
   overflow-x: auto;
+  padding-left: var(--space-lg);
+  padding-right: var(--space-lg);
 }
 
 .format {

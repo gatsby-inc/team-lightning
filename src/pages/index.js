@@ -129,8 +129,13 @@ const IndexPage = () => {
           >
             Download image
           </a>
-          <fieldset className={styles.ogCode}>
-            <legend>OG Code</legend>
+          <fieldset
+            className={[styles.ogCode]
+              .concat(styles.format)
+              .concat(styles.input)
+              .join(" ")}
+          >
+            <legend className="sr-only">OG Code</legend>
             <div className={styles.overflow}>
               <pre
                 dangerouslySetInnerHTML={{
