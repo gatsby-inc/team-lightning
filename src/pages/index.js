@@ -85,27 +85,20 @@ const IndexPage = () => {
             </label>
           </fieldset>
           <div className={styles.description}>
-            <h3>What is this?</h3>
+            <h2 className={styles.heading}>What is this?</h2>
             <p>
               This service generates images that you can use as{" "}
               <code>og:image</code>s to use with the corresponding &lt;meta&gt;
-              tags. It's using Gatsby Cloud Functions under the hood.
-            </p>
-            <p>
-              Find out how this works and deploy your own image generator by
-              visiting GitHub.
-            </p>
-          </div>
-          <div className={styles.description}>
-            <h3>How was this built?</h3>
-            <p>
+              tags. It's using{" "}
               <a href="https://gatsbyjs.com/functions">
                 Gatsby Cloud Functions
-              </a>
-              . Care about the details? We know you do, check 'em out the{" "}
+              </a>{" "}
+              under the hood.
+            </p>
+            <p>
+              Care about the details? We know you do, check 'em out the{" "}
               <Link to="/how/">full details</Link>.
             </p>
-            <p>It's using Gatsby Cloud Functions under the hood.</p>
             <p>
               Find out how this works and deploy your own image generator by
               visiting GitHub.

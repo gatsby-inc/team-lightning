@@ -28,8 +28,12 @@
 }
 
 .description {
-  font-size: var(--text-md);
+  font-size: var(--text-sm);
   color: var(--text-color-secondary);
+  border-top: 1px solid #eee;
+  margin-top: var(--space-md);
+  padding-top: var(--space-md);
+  line-height: var(--default);
 }
 
 .description a {
@@ -105,6 +109,12 @@
 .text-format label {
   font-weight: bold;
   margin-bottom: var(--space-md);
+}
+
+.heading {
+  color: var(--text-color);
+  font-size: var(--text-md);
+  font-weight: var(--semibold);
 }
 
 @media (min-width: 1024px) {
