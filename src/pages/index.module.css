@@ -161,6 +161,7 @@
 .uiWrapper {
   display: grid;
   gap: var(--size-gap);
+  grid-auto-rows: max-content;
 }
 
 .ogCode {
