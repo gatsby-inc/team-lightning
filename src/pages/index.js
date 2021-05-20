@@ -91,9 +91,18 @@ const IndexPage = () => {
           </div>
           <div className={styles.description}>
             <h3>How was this built?</h3>
-            <p><a href="https://gatsbyjs.com/functions">Gatsby Cloud Functions</a>. Care about the details? We know you do, check 'em out the <Link to="/how/">full details</Link>.</p>
+            <p>
+              <a href="https://gatsbyjs.com/functions">
+                Gatsby Cloud Functions
+              </a>
+              . Care about the details? We know you do, check 'em out the{" "}
+              <Link to="/how/">full details</Link>.
+            </p>
             <p>It's using Gatsby Cloud Functions under the hood.</p>
-            <p>Find out how this works and deploy your own image generator by visiting GitHub.</p>
+            <p>
+              Find out how this works and deploy your own image generator by
+              visiting GitHub.
+            </p>
           </div>
         </div>
         <div className={styles.resultWrapper}>
