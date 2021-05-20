@@ -1,5 +1,5 @@
-import React from 'react'
-import { Helmet } from 'react-helmet'
+import React from "react";
+import { Helmet } from "react-helmet";
 
 function Seo({ title, image, description, url }) {
   return (
@@ -36,7 +36,7 @@ function Seo({ title, image, description, url }) {
         },
         {
           name: `twitter:creator`,
-          content: '@gatsbyjs',
+          content: "@gatsbyjs",
         },
         {
           name: `twitter:title`,
@@ -46,24 +46,28 @@ function Seo({ title, image, description, url }) {
           name: `twitter:description`,
           content: description,
         },
-      ].concat(image ? [
-        {
-          name: `image`,
-          content: image,
-        },
-        {
-          property: `og:image`,
-          content: image,
-        },
+      ].concat(
+        image
+          ? [
+              {
+                name: `image`,
+                content: image,
+              },
+              {
+                property: `og:image`,
+                content: image,
+              },
 
-        /* Twitter Card tags */
-        {
-          name: `twitter:card`,
-          content: `summary_large_image`,
-        },
-      ] : [])}
+              /* Twitter Card tags */
+              {
+                name: `twitter:card`,
+                content: `summary_large_image`,
+              },
+            ]
+          : []
+      )}
     />
-  )
+  );
 }
 
-export { Seo }
+export { Seo };
