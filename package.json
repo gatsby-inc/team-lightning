@@ -15,12 +15,15 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "debounce": "^1.2.1",
     "gatsby": "^3.4.1",
     "gatsby-plugin-gatsby-cloud": "^2.5.0",
     "jimp": "^0.16.1",
     "node-fetch": "^2.6.1",
+    "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "yup": "^0.32.9"
+    "yup": "^0.32.9",
+    "react-icons": "^4.2.0"
   }
 }
