@@ -107,6 +107,7 @@ const IndexPage = () => {
             className={styles.image}
             src={`/api/social-card?text=${imageVersion}&format=${activeFormat}`}
           />
+
           <div className={styles.url}>
             <input
               className={[styles.input].concat(styles.urlInput).join(" ")}
@@ -119,10 +120,10 @@ const IndexPage = () => {
           <a
             href={`/api/social-card?text=${imageVersion}`}
             download={`release-${slugify(imageVersion)}.png`}
+            className={styles.button}
           >
-            download me
+            Download image
           </a>
-          {/* <input type="submit" className={styles.button} /> */}
           <fieldset className={styles.ogCode}>
             <legend>OG Code</legend>
             <div className={styles.overflow}>

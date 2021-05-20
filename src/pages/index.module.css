@@ -51,6 +51,10 @@
   font-weight: var(--medium);
   font-size: var(--text-md);
   border-radius: var(--radius-md);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .url {
@@ -60,6 +64,10 @@
 .urlInput {
   display: flex;
   width: 100%;
+}
+
+.stuff {
+  display: flex;
 }
 
 .copy {
