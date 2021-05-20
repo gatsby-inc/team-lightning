@@ -1,6 +1,6 @@
 import * as React from "react";
 import debounce from "debounce";
-import { Link } from 'gatsby'
+import { Link } from "gatsby";
 
 import { Copy } from "../components/copy/copy";
 import { Header } from "../components/header";
@@ -122,7 +122,13 @@ const IndexPage = () => {
             <Copy className={styles.copy} content={url} />
           </div>
 
-          <a disabled={!version} className={[styles.button].concat(styles.download).join(' ')} {...version && ({ href: `/api/download-assets?text=${version}`} )}>Download Assets</a>
+          <a
+            disabled={!version}
+            className={[styles.button].concat(styles.download).join(" ")}
+            {...(version && { href: `/api/download-assets?text=${version}` })}
+          >
+            Download Assets
+          </a>
           <fieldset className={styles.ogCode}>
             <legend>OG Code</legend>
             <div className={styles.overflow}>

@@ -2,7 +2,7 @@ import fetch from "node-fetch";
 import Jimp from "jimp";
 import * as yup from "yup";
 
-import getHost from '../lib/get-host'
+import getHost from "../lib/get-host";
 
 const schema = yup.object().shape({
   text: yup.string().required(),
@@ -21,7 +21,7 @@ const SQUARE_FORMAT = {
   textY: 780,
 };
 
-const HOST = getHost()
+const HOST = getHost();
 
 export default async function socialCard(req, res) {
   try {
@@ -63,7 +63,7 @@ export default async function socialCard(req, res) {
       .status(200)
       .send(await modifiedImage.getBufferAsync(Jimp.MIME_PNG));
   } catch (e) {
-    console.error(e)
+    console.error(e);
     return res.status(500).json({
       message: e.message,
       stack: e.stack,

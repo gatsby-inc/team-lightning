@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Link } from "gatsby";
-import { FaGithubSquare } from 'react-icons/fa'
+import { FaGithubSquare } from "react-icons/fa";
 import socialCard from "!!raw-loader!../api/social-card.js";
 import downloadAssets from "!!raw-loader!../api/download-assets.js";
 
@@ -11,16 +11,20 @@ import {
   description,
 } from "./index.module.css";
 import { Header } from "../components/header";
-import { Highlight } from "../components/highlight"
+import { Highlight } from "../components/highlight";
 
 import * as styles from "./how.module.css";
 
 const CodeTitle = ({ title, ...props }) => (
   <h3 className={styles.codeTitle} {...props}>
     <pre className={styles.pre}>{title}</pre>
-    <a href={`https://github.com/gatsby-inc/team-lightning/blob/main/src/${title}`}><FaGithubSquare size={24} /> Source</a>
+    <a
+      href={`https://github.com/gatsby-inc/team-lightning/blob/main/src/${title}`}
+    >
+      <FaGithubSquare size={24} /> Source
+    </a>
   </h3>
-)
+);
 
 function How() {
   return (
@@ -58,7 +62,8 @@ function How() {
                 <a href="https://www.npmjs.com/package/archiver">
                   <pre className={styles.pre}>archiver</pre>
                 </a>
-                . We leveraged archiver to generate a .zip of the bundled assets and return the stream to the user.
+                . We leveraged archiver to generate a .zip of the bundled assets
+                and return the stream to the user.
               </li>
             </ul>
             <p>
@@ -73,8 +78,14 @@ function How() {
             <h2>The code</h2>
             <p>There are two main pieces.</p>
             <ol>
-              <li><pre className={styles.pre}>api/social-card.js</pre>: An API that will generate a social card for OG images</li>
-              <li><pre className={styles.pre}>api/download-assets.js</pre>: An API to return a .zip file with bundled assets (for social sharing)</li>
+              <li>
+                <pre className={styles.pre}>api/social-card.js</pre>: An API
+                that will generate a social card for OG images
+              </li>
+              <li>
+                <pre className={styles.pre}>api/download-assets.js</pre>: An API
+                to return a .zip file with bundled assets (for social sharing)
+              </li>
             </ol>
             <CodeTitle title="api/social-card.js" />
             <p>
@@ -82,23 +93,22 @@ function How() {
               <a href="https://github.com/gatsby-inc/team-lightning/blob/main/src/api/social-card.js">
                 <pre className={styles.pre}>api/social-card.js</pre>
               </a>{" "}
-              is all we need for a robust social sharing card service! The code is as follows:
+              is all we need for a robust social sharing card service! The code
+              is as follows:
             </p>
 
             <Highlight code={socialCard} />
 
             <CodeTitle title="api/download-assets.js" />
             <p>
-              This function uses the library archiver to download a .zip of assets (invoking the previous service to generate the images).
+              This function uses the library archiver to download a .zip of
+              assets (invoking the previous service to generate the images).
               <a href="https://github.com/gatsby-inc/team-lightning/blob/main/src/api/download-assets.js">
                 <pre className={styles.pre}>api/download-assets.js</pre>
               </a>
             </p>
             <Highlight code={downloadAssets} />
-            
           </div>
-
-          
         </div>
       </main>
     </>
