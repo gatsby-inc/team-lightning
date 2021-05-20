@@ -116,7 +116,6 @@ const IndexPage = () => {
             />
             <Copy className={styles.copy} content={url} />
           </div>
-
           <a
             href={`/api/social-card?text=${imageVersion}`}
             download={`release-${slugify(imageVersion)}.png`}

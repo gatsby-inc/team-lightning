@@ -1,6 +1,6 @@
 # Team Lightning ⚡
 
-What it is: to be determined 🔜
+What it is: a social card generator for sharing release notes on Twitter, LinkedIn, Instagram, and also for using as og-image tags for our release notes.
 ## 🚀 Quick start
 
 1.  **Create a Gatsby site.**
