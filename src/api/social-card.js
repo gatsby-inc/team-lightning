@@ -1,53 +1,76 @@
 import fetch from "node-fetch";
 import Jimp from "jimp";
+import * as yup from "yup";
 
-const url =
+const schema = yup.object().shape({
+  text: yup.string().required(),
+  format: yup.string().required(),
+});
+
+const LANDSCAPE_FORMAT = {
+  background: "landcape-template.png",
+  font: "Inter-ExtraBold.ttf.fnt",
+  textY: 380,
+};
+
+const SQUARE_FORMAT = {
+  background: "square-template.png",
+  font: "Inter-ExtraBold.ttf.fnt",
+  textY: 780,
+};
+
+const HOST =
   process.env.NODE_ENV === "production"
-    ? "https://teamlightning.gatsbyjs.io/gatsby-release.png"
-    : "http://localhost:8000/gatsby-release.png";
+    ? "https://teamlightning.gatsbyjs.io/"
+    : "http://localhost:8000/";
 
 export default async function socialCard(req, res) {
-  const { text = "YOUR TEXT" } = req.query;
-  const imageRes = await fetch(url);
-  const imageBuffer = await imageRes.buffer();
-  // const fontRes = await fetch(
-  //   "https://raw.githubusercontent.com/oliver-moran/jimp/master/packages/plugin-print/fonts/open-sans/open-sans-10-black/open-sans-10-black.fnt"
-  // );
-  // const fontBuffer = await fontRes.buffer();
-  // console.log({ fontBuffer });
-  // load font converted from from https://ttf2fnt.com/
-  // we might get around having to provide bespoke font files per font color,
-  // @see https://github.com/oliver-moran/jimp/issues/537#issuecomment-533831077 ff.
-  //
-  // const whiteFont = await Jimp.loadFont(`font/white/Inter-Black.ttf.fnt`)
-  // const purpleFont = await Jimp.loadFont(`font/purple/Inter-Black.ttf.fnt`)
-  // const name = `${firstname} ${lastname}`
-  // const idFont = await Jimp.loadFont(`font/Inter-700-16px/Inter-Bold.ttf.fnt`)
-  // const nameFont = await Jimp.loadFont(`font/Inter-ExtraBold-56e/Inter-ExtraBold-56e.fnt`)
-  // these fonts can't have their size or color changed programmatically
-  // you have to convert an entirely new font into a .fnt
-  const font = await Jimp.loadFont(
-    "https://raw.githubusercontent.com/oliver-moran/jimp/master/packages/plugin-print/fonts/open-sans/open-sans-128-black/open-sans-128-black.fnt"
-  );
+  try {
+    const { text, format } = await schema.validate(req.query);
 
-  // open a file called "template.png"
-  const image = await Jimp.read(imageBuffer);
+    let options;
+    if (format === `landscape`) {
+      options = LANDSCAPE_FORMAT;
+    } else if (format === `square`) {
+      options = SQUARE_FORMAT;
+    } else {
+      return res.status(500).json({
+        message: `You need to pass in a format`,
+      });
+    }
 
-  const [width, height] = [
-    Jimp.measureText(font, text),
-    Jimp.measureTextHeight(font, text),
-  ];
+    const font = await Jimp.loadFont(`${HOST}${options.font}`);
 
-  // fontFile, x coord, y coord, text, maxWidth
-  image.print(
-    font,
-    image.getWidth() / 2 - width / 2,
-    image.getHeight() / 2 - height / 2,
-    text
-  );
+    const imageRes = await fetch(`${HOST}${options.background}`);
+    const imageBuffer = await imageRes.buffer();
 
-  return res
-    .header("Content-Type", "image/png")
-    .status(200)
-    .send(await image.getBufferAsync(Jimp.MIME_PNG));
+    let modifiedImage = await Jimp.read(imageBuffer);
+
+    const imageDimensions = [
+      modifiedImage.getWidth(),
+      modifiedImage.getHeight(),
+    ];
+    const textDimensions = [
+      Jimp.measureText(font, text),
+      Jimp.measureTextHeight(font, text),
+    ];
+
+    modifiedImage.print(
+      font,
+      imageDimensions[0] / 2 - textDimensions[0] / 2,
+      // This is approximate
+      options.textY,
+      text
+    );
+
+    return res
+      .header("Content-Type", "image/png")
+      .status(200)
+      .send(await modifiedImage.getBufferAsync(Jimp.MIME_PNG));
+  } catch (e) {
+    return res.status(500).json({
+      message: e.message,
+      stack: e.stack,
+    });
+  }
 }
