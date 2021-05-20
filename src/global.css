@@ -26,8 +26,9 @@ kbd {
   border-radius: var(--radius-sm);
   padding-left: var(--space-sm);
   padding-right: var(--space-sm);
-  color: var(--black-fade-40);
+  color: var(--black-fade-60);
   background-color: #fff2a8;
+  font-size: 94%;
 }
 
 html,
