@@ -21,7 +21,9 @@ const SQUARE_FORMAT = {
 
 const HOST =
   process.env.NODE_ENV === "production"
-    ? "https://teamlightning.gatsbyjs.io/"
+    ? process.env.PRODUCTION_HOST
+      ? process.env.PRODUCTION_HOST
+      : "https://teamlightning.gatsbyjs.io/"
     : "http://localhost:8000/";
 
 export default async function socialCard(req, res) {
