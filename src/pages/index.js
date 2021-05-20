@@ -39,12 +39,17 @@ const IndexPage = () => {
   return (
     <main className={styles.main}>
       <div className={styles.uiWrapper}>
-        <input
-          className={styles.input}
-          placeholder="Input a version number (e.g. 3.5)"
-          onChange={onChange}
-        />
         <div>
+          <label htmlFor="imageText">Text</label>
+          <input
+            className={styles.input}
+            placeholder="Input a version number (e.g. 3.5)"
+            onChange={onChange}
+            id="imageText"
+          />
+        </div>
+        <fieldset className={styles.format}>
+          <legend>Format</legend>
           <input
             type="radio"
             id="social-twitter"
@@ -56,7 +61,6 @@ const IndexPage = () => {
           <label htmlFor="social-twitter" className={styles.pointer}>
             Twitter
           </label>
-
           <input
             type="radio"
             id="social-linkedin"
@@ -68,7 +72,7 @@ const IndexPage = () => {
           <label htmlFor="social-linkedin" className={styles.pointer}>
             LinkedIn
           </label>
-        </div>
+        </fieldset>
       </div>
       <div className={styles.resultWrapper}>
         <img

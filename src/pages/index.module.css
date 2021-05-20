@@ -172,6 +172,15 @@
   overflow-x: auto;
 }
 
+.format {
+  border: 0;
+  padding: 0;
+}
+
+.format legend {
+  margin-bottom: var(--space-md);
+}
+
 @media (min-width: 1024px) {
   .main {
     --size-gap: var(--space-2xl);
