@@ -1,7 +1,6 @@
 import * as React from "react";
 import debounce from "debounce";
 import { Link } from "gatsby";
-import slugify from "@sindresorhus/slugify";
 
 import { Copy } from "../components/copy/copy";
 import { Header } from "../components/header";
@@ -122,12 +121,13 @@ const IndexPage = () => {
             />
             <Copy className={styles.copy} content={url} />
           </div>
+
           <a
-            href={`/api/social-card?text=${imageVersion}&format=${activeFormat}`}
-            download={`release-${slugify(imageVersion)}.png`}
-            className={styles.button}
+            disabled={!version}
+            className={[styles.button].concat(styles.download).join(" ")}
+            {...(version && { href: `/api/download-assets?text=${version}` })}
           >
-            Download image
+            Download Assets
           </a>
           <fieldset className={styles.ogCode}>
             <legend>OG Code</legend>
