@@ -1,7 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 
-function SEO({ title, image, description, url }) {
+function Seo({ title, image, description, url }) {
   return (
     <Helmet
       title={title}
@@ -63,4 +63,4 @@ function SEO({ title, image, description, url }) {
   )
 }
 
-export { SEO }
+export { Seo }
