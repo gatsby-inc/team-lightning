@@ -38,54 +38,67 @@ const IndexPage = () => {
 
   return (
     <main className={styles.main}>
-      <input
-        className={styles.input}
-        placeholder="Input a version number (e.g. 3.5)"
-        onChange={onChange}
-      />
-      <div>
-        <input
-          type="radio"
-          id="social-twitter"
-          name="social"
-          value="twitter"
-          selected={activeSocial === "twitter"}
-          onChange={selectSocial}
-        />
-        <label htmlFor="social-twitter" className={styles.pointer}>Twitter</label>
-
-        <input
-          type="radio"
-          id="social-linkedin"
-          name="social"
-          value="linkedin"
-          selected={activeSocial === "linkedin"}
-          onChange={selectSocial}
-        />
-        <label htmlFor="social-linkedin" className={styles.pointer}>LinkedIn</label>
+      <div className={styles.uiWrapper}>
+        <div>
+          <label htmlFor="imageText">Text</label>
+          <input
+            className={styles.input}
+            placeholder="Input a version number (e.g. 3.5)"
+            onChange={onChange}
+            id="imageText"
+          />
+        </div>
+        <fieldset className={styles.format}>
+          <legend>Format</legend>
+          <input
+            type="radio"
+            id="social-twitter"
+            name="social"
+            value="twitter"
+            selected={activeSocial === "twitter"}
+            onChange={selectSocial}
+          />
+          <label htmlFor="social-twitter" className={styles.pointer}>
+            Twitter
+          </label>
+          <input
+            type="radio"
+            id="social-linkedin"
+            name="social"
+            value="linkedin"
+            selected={activeSocial === "linkedin"}
+            onChange={selectSocial}
+          />
+          <label htmlFor="social-linkedin" className={styles.pointer}>
+            LinkedIn
+          </label>
+        </fieldset>
       </div>
-      <div className={styles.url}>
-        <input
-          className={[styles.input].concat(styles.urlInput).join(" ")}
-          readOnly={true}
-          value={url}
+      <div className={styles.resultWrapper}>
+        <img
+          className={styles.image}
+          src={`/api/social-card?text=${imageVersion}`}
         />
-        <Copy className={styles.copy} content={url} />
+        <div className={styles.url}>
+          <input
+            className={[styles.input].concat(styles.urlInput).join(" ")}
+            readOnly={true}
+            value={url}
+          />
+          <Copy className={styles.copy} content={url} />
+        </div>
+        {/* <input type="submit" className={styles.button} /> */}
+        <fieldset className={styles.ogCode}>
+          <legend>OG Code</legend>
+          <div className={styles.overflow}>
+            <pre
+              dangerouslySetInnerHTML={{
+                __html: `&lt;meta property="og:image" content="${url}" /&gt;`,
+              }}
+            />
+          </div>
+        </fieldset>
       </div>
-      {/* <input type="submit" className={styles.button} /> */}
-      <img
-        className={styles.image}
-        src={`/api/social-card?text=${imageVersion}`}
-      />
-
-      <fieldset>
-      <legend>OG Code</legend>
-        <pre
-          dangerouslySetInnerHTML={{
-            __html: `&lt;meta property="og:image" content="${url}" /&gt;`,
-          }}
-        />
-      </fieldset>
     </main>
   );
 };
