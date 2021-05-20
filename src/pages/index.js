@@ -1,7 +1,7 @@
 import * as React from "react";
 import debounce from "debounce";
 import { Link } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image"
+import { StaticImage } from "gatsby-plugin-image";
 
 import { Copy } from "../components/copy/copy";
 import { Header } from "../components/header";
@@ -20,7 +20,7 @@ const getUrl = (version, format) => {
 // markup
 const IndexPage = () => {
   const [version, setVersion] = React.useState("");
-  const [isClient, setIsClient] = React.useState(false)
+  const [isClient, setIsClient] = React.useState(false);
   const [activeFormat, setActiveFormat] = React.useState("landscape");
   const [imageVersion, setImageVersion] = React.useState("");
   const url = getUrl(version, activeFormat);
@@ -42,8 +42,8 @@ const IndexPage = () => {
   }, []);
 
   React.useEffect(() => {
-    setIsClient(true)
-  }, [])
+    setIsClient(true);
+  }, []);
 
   return (
     <div>
@@ -109,13 +109,18 @@ const IndexPage = () => {
         </div>
         <div className={styles.resultWrapper}>
           {version ? (
-              <img
+            <img
               className={styles.image}
-              src={`/api/social-card?text=${imageVersion || ' '}&format=${activeFormat}`}
+              src={`/api/social-card?text=${
+                imageVersion || " "
+              }&format=${activeFormat}`}
               alt=""
             />
           ) : (
-            <StaticImage src="https://teamlightning.gtsb.io/api/social-card?text=todo&amp;format=landscape" alt="" />
+            <StaticImage
+              src="https://teamlightning.gtsb.io/api/social-card?text=todo&amp;format=landscape"
+              alt=""
+            />
           )}
           <div className={styles.url}>
             <label htmlFor="imageUrl" className="sr-only">
