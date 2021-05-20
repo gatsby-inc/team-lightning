@@ -8,4 +8,7 @@
   display: flex;
   font-size: var(--text-lg);
   align-items: center;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: var(--size-gap);
 }
