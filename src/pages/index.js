@@ -123,7 +123,7 @@ const IndexPage = () => {
             <Copy className={styles.copy} content={url} />
           </div>
           <a
-            href={`/api/social-card?text=${imageVersion}`}
+            href={`/api/social-card?text=${imageVersion}&format=${activeFormat}`}
             download={`release-${slugify(imageVersion)}.png`}
             className={styles.button}
           >
