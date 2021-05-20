@@ -140,6 +140,11 @@
   text-decoration: none;
 }
 
+.button[disabled] {
+  background: var(--grey-50);
+  cursor: not-allowed;
+}
+
 .url {
   position: relative;
 }

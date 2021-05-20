@@ -15,6 +15,7 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "archiver": "^5.3.0",
     "debounce": "^1.2.1",
     "gatsby": "^3.4.1",
     "gatsby-plugin-gatsby-cloud": "^2.5.0",
@@ -29,7 +30,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
-    "yup": "^0.32.9",
-    "react-icons": "^4.2.0"
+    "react-icons": "^4.2.0",
+    "yup": "^0.32.9"
   }
 }
