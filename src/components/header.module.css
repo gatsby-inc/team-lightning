@@ -1,19 +1,29 @@
-.header {
-  font-family: var(--font-body);
+.container {
   margin: 0 auto;
   max-width: 1240px;
   padding: var(--space-2xl) var(--size-gap);
+}
+
+.heading {
+  margin: 0;
 }
 
 .link {
   align-items: center;
   color: #000;
   display: inline-flex;
+  font-family: var(--font-body);
   font-size: var(--text-lg);
+  font-weight: var(--semibold);
   text-decoration: none;
 }
 
+.link:hover {
+  color: var(--primary);
+}
+
 .logo {
-  float: left;
+  height: var(--space-2xl);
+  width: var(--space-2xl);
   margin-right: var(--space-md);
 }
