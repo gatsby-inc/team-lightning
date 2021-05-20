@@ -38,6 +38,12 @@
 
 .description a {
   color: var(--primary);
+  font-weight: var(--semibold);
+  text-decoration: none;
+}
+
+.description a:hover {
+  border-bottom: 1px solid var(--primary);
 }
 
 .button {
