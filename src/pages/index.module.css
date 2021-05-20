@@ -49,9 +49,10 @@
   color: var(--white);
   padding: var(--space-md);
   font-weight: var(--medium);
-  font-size: var(--text-md);
+  font-size: var(--text-lg);
   border-radius: var(--radius-md);
   text-decoration: none;
+  height: var(--size-input);
   display: flex;
   align-items: center;
   justify-content: center;
