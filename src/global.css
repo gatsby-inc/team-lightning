@@ -122,7 +122,15 @@ kbd {
   background-color: #fff2a8;
 }
 
-,
+html,
+body {
+  margin: 0;
+}
+
+body * {
+  box-sizing: border-box;
+}
+
 @media (min-width: 1024px) {
   :root {
     --size-gap: var(--space-3xl);

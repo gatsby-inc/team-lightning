@@ -8,10 +8,6 @@
   gap: var(--size-gap);
 }
 
-.main * {
-  box-sizing: border-box;
-}
-
 .input {
   appearance: none;
   font-size: var(--text-md);
