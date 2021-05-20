@@ -114,6 +114,15 @@
   align-items: center;
 }
 
+.description {
+  font-size: var(--text-md);
+  color: var(--text-color-secondary);
+}
+
+.description a {
+  color: var(--primary);
+}
+
 .button {
   appearance: none;
   border: 0;
