@@ -128,12 +128,16 @@
   border: 0;
   background: var(--primary);
   color: var(--white);
-  height: var(--size-input);
-  padding-left: var(--space-md);
-  padding-right: var(--space-md);
+  padding: var(--space-md);
   font-weight: var(--medium);
   font-size: var(--text-md);
   border-radius: var(--radius-md);
+  display: inline-block;
+}
+
+.button.download {
+  text-align: center;
+  text-decoration: none;
 }
 
 .url {

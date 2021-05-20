@@ -110,7 +110,7 @@ const IndexPage = () => {
             <Copy className={styles.copy} content={url} />
           </div>
 
-          <a href={`/api/social-card?text=${imageVersion}`} download={`release-${slugify(imageVersion)}.png`}>download me</a>
+          <a href={`/api/social-card?text=${imageVersion}`} download={`release-${slugify(imageVersion)}.png`} className={[styles.button].concat(styles.download).join(' ')}>Download Assets</a>
           {/* <input type="submit" className={styles.button} /> */}
           <fieldset className={styles.ogCode}>
             <legend>OG Code</legend>
