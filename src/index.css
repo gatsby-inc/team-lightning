@@ -3,6 +3,9 @@
   /* font-family */
   --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
 
   /* palette */
   --black-fade-5: rgba(0, 0, 0, 0.05);
@@ -96,6 +99,11 @@
   padding: 0;
   position: absolute;
   width: 1px;
+}
+
+code,
+pre {
+  font-family: var(--font-monospace);
 }
 
 @media (min-width: 1024px) {
