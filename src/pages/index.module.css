@@ -85,9 +85,11 @@
 }
 
 .pointer {
+  align-items: baseline;
   cursor: pointer;
   display: flex;
   gap: var(--space-sm);
+  padding: var(--space-sm) 0;
 }
 
 .resultWrapper {
