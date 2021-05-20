@@ -53,7 +53,7 @@ const IndexPage = () => {
             <label htmlFor="imageText">Text</label>
             <input
               className={styles.input}
-              placeholder="Input a version number (e.g. 3.5)"
+              placeholder='E. g. "v3.5"'
               onChange={onChange}
               id="imageText"
             />
