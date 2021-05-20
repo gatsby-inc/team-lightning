@@ -100,14 +100,15 @@
   padding: 0;
 }
 
-.format legend, .text-format label {
+.format legend,
+.text-format label {
   font-weight: bold;
   margin-bottom: var(--space-md);
 }
 
 @media (min-width: 1024px) {
   .main {
-    --size-gap: var(--space-2xl);
+    --size-gap: var(--space-3xl);
     flex-direction: row;
   }
 
