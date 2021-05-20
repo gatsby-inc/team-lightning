@@ -125,7 +125,8 @@
 }
 
 .format legend,
-.text-format label {
+.textFormat label {
+  display: block;
   font-weight: var(--semibold);
   margin-bottom: var(--space-md);
 }
