@@ -20,7 +20,6 @@ samp {
 tt,
 code,
 kbd {
-  background: #eee;
   padding-top: 0.2em;
   padding-bottom: 0.2em;
   border-radius: var(--radius-sm);
