@@ -78,6 +78,7 @@
 .resultWrapper {
   display: grid;
   gap: var(--space-2xl);
+  grid-auto-rows: max-content;
 }
 
 .uiWrapper {
