@@ -70,7 +70,7 @@ const IndexPage = () => {
           </label>
         </div>
       </div>
-      <div>
+      <div className={styles.resultWrapper}>
         <img
           className={styles.image}
           src={`/api/social-card?text=${imageVersion}`}
