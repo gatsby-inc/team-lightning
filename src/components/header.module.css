@@ -8,7 +8,7 @@
 .link {
   align-items: center;
   color: #000;
-  display: flex;
+  display: inline-flex;
   font-size: var(--text-lg);
   text-decoration: none;
 }
