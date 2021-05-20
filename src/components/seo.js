@@ -4,6 +4,9 @@ import { Helmet } from 'react-helmet'
 function Seo({ title, image, description, url }) {
   return (
     <Helmet
+      htmlAttributes={{
+        lang: "en",
+      }}
       title={title}
       titleTemplate={`%s | Release Notes Generator`}
       meta={[
