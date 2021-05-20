@@ -5,7 +5,7 @@ import slugify from "@sindresorhus/slugify";
 
 import { Copy } from "../components/copy/copy";
 import { Header } from "../components/header"
-import { SEO } from "../components/seo"
+import { Seo } from "../components/seo"
 
 import * as styles from "./index.module.css";
 
@@ -42,14 +42,14 @@ const IndexPage = () => {
 
   return (
     <div>
-      <SEO title="Release Notes Generator"
+      <Seo title="Release Notes Generator"
         description="Gatsby's release notes generator to generate our social sharing cards, powered by Gatsby Cloud Functions"
         image="/api/social-card?text=Release%20Notes%20Generator&format=landscape"
       />
       <Header />
       <main className={styles.main}>
         <div className={styles.uiWrapper}>
-          <div>
+          <div className={styles.textFormat}>
             <label htmlFor="imageText">Text</label>
             <input
               className={styles.input}
@@ -65,7 +65,7 @@ const IndexPage = () => {
               id="landscape"
               name="format"
               value="landscape"
-              selected={activeFormat === "twitter"}
+              selected={activeFormat === "landscape"}
               onChange={selectFormat}
             />
             <label htmlFor="landscape" className={styles.pointer}>

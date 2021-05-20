@@ -6,7 +6,9 @@ import * as styles from './header.module.css'
 function Header() {
   return (
     <header>
-      <h1><StaticImage src="../images/icon.png" alt="Gatsby" /> Gatsby</h1>
+      <h1 className={styles.header}>
+        <StaticImage src="../images/icon.png" alt="Gatsby" className={styles.logo} /> Gatsby
+      </h1>
     </header>
   )
 }

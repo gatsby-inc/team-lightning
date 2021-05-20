@@ -187,7 +187,8 @@
   padding: 0;
 }
 
-.format legend {
+.format legend, .text-format label {
+  font-weight: bold;
   margin-bottom: var(--space-md);
 }
 
