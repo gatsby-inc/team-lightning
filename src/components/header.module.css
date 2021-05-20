@@ -1,3 +1,11 @@
 .logo {
-    float: left;
+  float: left;
+  margin-right: var(--space-md);
+}
+
+.header {
+  font-family: var(--font-body);
+  display: flex;
+  font-size: var(--text-lg);
+  align-items: center;
 }
