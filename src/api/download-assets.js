@@ -38,7 +38,7 @@ export default async function Bundle(req, res) {
     archive.finalize()
 
     archive.on('error', reject)
-    archive.on('data', data => console.log(data) || responses.push(data))
+    archive.on('data', data => responses.push(data))
     archive.on('end', () => {
       resolve(Buffer.concat(responses))
     })
