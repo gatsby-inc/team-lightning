@@ -107,12 +107,11 @@
 
 .format legend,
 .text-format label {
-  font-weight: bold;
+  font-weight: var(--semibold);
   margin-bottom: var(--space-md);
 }
 
 .heading {
-  color: var(--text-color);
   font-size: var(--text-md);
   font-weight: var(--semibold);
 }

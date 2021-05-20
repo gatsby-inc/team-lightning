@@ -87,21 +87,18 @@ const IndexPage = () => {
           <div className={styles.description}>
             <h2 className={styles.heading}>What is this?</h2>
             <p>
-              This service generates images that you can use as{" "}
-              <code>og:image</code>s to use with the corresponding &lt;meta&gt;
-              tags. It's using{" "}
+              This service generates social media images that can be used as{" "}
+              <code>og:image</code> along the corresponding &lt;meta&gt; tags.
+              It's using{" "}
               <a href="https://gatsbyjs.com/functions">
                 Gatsby Cloud Functions
               </a>{" "}
               under the hood.
             </p>
             <p>
-              Care about the details? We know you do, check 'em out the{" "}
-              <Link to="/how/">full details</Link>.
-            </p>
-            <p>
-              Find out how this works and deploy your own image generator by
-              visiting GitHub.
+              Care about the details?{" "}
+              <Link to="/how/">Find out how this works</Link> and deploy your
+              own image generator by visiting GitHub.
             </p>
           </div>
         </div>
