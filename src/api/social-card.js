@@ -35,10 +35,6 @@ export default async function socialCard(req, res) {
       options = LANDSCAPE_FORMAT;
     } else if (format === `square`) {
       options = SQUARE_FORMAT;
-    } else {
-      return res.status(500).json({
-        message: `You need to pass in a format`,
-      });
     }
 
     const font = await Jimp.loadFont(`${HOST}${options.font}`);
