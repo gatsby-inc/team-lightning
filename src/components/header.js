@@ -11,7 +11,7 @@ function Header() {
         <Link to="/" className={styles.link}>
           <StaticImage
             src="../images/icon.png"
-            alt="Gatsby"
+            alt="Gatsby logo"
             className={styles.logo}
           />{" "}
           Gatsby

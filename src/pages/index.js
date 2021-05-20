@@ -106,13 +106,19 @@ const IndexPage = () => {
           <img
             className={styles.image}
             src={`/api/social-card?text=${imageVersion}&format=${activeFormat}`}
+            alt=""
           />
 
           <div className={styles.url}>
+            <label htmlFor="imageUrl" className="sr-only">
+              Image URL
+            </label>
             <input
               className={[styles.input].concat(styles.urlInput).join(" ")}
               readOnly={true}
               value={url}
+              id="imageUrl"
+              name="imageUrl"
             />
             <Copy className={styles.copy} content={url} />
           </div>
