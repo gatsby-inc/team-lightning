@@ -3,7 +3,7 @@
   align-items: center;
   background-color: transparent;
   border: none;
-  color: var(--text-color-secondary);
+  color: var(--input-text);
   font-size: var(--text-sm);
   padding: var(--space-md);
   transition: 250ms ease-in-out;
