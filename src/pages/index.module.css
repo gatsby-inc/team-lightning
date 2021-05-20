@@ -1,5 +1,5 @@
 .main {
-  max-width: 1024px;
+  max-width: 1240px;
   margin: 0 auto;
   padding: var(--size-gap);
   font-family: var(--font-body);
@@ -77,12 +77,12 @@
 
 .resultWrapper {
   display: grid;
-  gap: var(--size-gap);
+  gap: var(--space-2xl);
 }
 
 .uiWrapper {
   display: grid;
-  gap: var(--size-gap);
+  gap: var(--space-2xl);
   grid-auto-rows: max-content;
 }
 
@@ -108,11 +108,10 @@
 
 @media (min-width: 1024px) {
   .main {
-    --size-gap: var(--space-3xl);
     flex-direction: row;
   }
 
   .uiWrapper {
-    width: 460px;
+    width: 520px;
   }
 }
