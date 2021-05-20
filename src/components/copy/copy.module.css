@@ -3,15 +3,15 @@
   align-items: center;
   background-color: transparent;
   border: none;
-  color: theme('color.white');
-  font-size: theme('fontSize.xs');
-  font-family: theme('font.sans'); /* TODO: validate */
-  padding: theme('spacing.1');
+  color: var(--text-color-secondary);
+  font-size: var(--text-sm);
+  padding: var(--space-md);
   transition: 250ms ease-in-out;
 }
 
 .button[disabled] {
   cursor: not-allowed;
+  color: var(--input-text-disabled);
 }
 
 .button:not([disabled]):hover {
@@ -20,5 +20,5 @@
 
 .button > svg {
   display: inline-block;
-  margin-left: theme('padding.1');
+  margin-left: var(--space-sm);
 }
