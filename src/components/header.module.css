@@ -1,14 +1,19 @@
+.header {
+  font-family: var(--font-body);
+  margin: 0 auto;
+  max-width: 1240px;
+  padding: var(--space-2xl) var(--size-gap);
+}
+
+.link {
+  align-items: center;
+  color: #000;
+  display: flex;
+  font-size: var(--text-lg);
+  text-decoration: none;
+}
+
 .logo {
   float: left;
   margin-right: var(--space-md);
-}
-
-.header {
-  font-family: var(--font-body);
-  display: flex;
-  font-size: var(--text-lg);
-  align-items: center;
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: var(--space-2xl) var(--size-gap);
 }
