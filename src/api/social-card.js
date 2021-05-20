@@ -35,10 +35,6 @@ export default async function socialCard(req, res) {
       options = LANDSCAPE_FORMAT;
     } else if (format === `square`) {
       options = SQUARE_FORMAT;
-    } else {
-      return res.status(500).json({
-        message: `You need to pass in a format`,
-      });
     }
 
     const font = await Jimp.loadFont(`${HOST}${options.font}`);
@@ -70,6 +66,7 @@ export default async function socialCard(req, res) {
       .status(200)
       .send(await modifiedImage.getBufferAsync(Jimp.MIME_PNG));
   } catch (e) {
+    console.error(e)
     return res.status(500).json({
       message: e.message,
       stack: e.stack,
