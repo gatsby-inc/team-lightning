@@ -84,13 +84,15 @@ const IndexPage = () => {
           <Copy className={styles.copy} content={url} />
         </div>
         {/* <input type="submit" className={styles.button} /> */}
-        <fieldset>
+        <fieldset className={styles.ogCode}>
           <legend>OG Code</legend>
-          <pre
-            dangerouslySetInnerHTML={{
-              __html: `&lt;meta property="og:image" content="${url}" /&gt;`,
-            }}
-          />
+          <div className={styles.overflow}>
+            <pre
+              dangerouslySetInnerHTML={{
+                __html: `&lt;meta property="og:image" content="${url}" /&gt;`,
+              }}
+            />
+          </div>
         </fieldset>
       </div>
     </main>

@@ -163,6 +163,15 @@
   gap: var(--size-gap);
 }
 
+.ogCode {
+  max-width: 100%;
+  min-width: 0;
+}
+
+.overflow {
+  overflow-x: auto;
+}
+
 @media (min-width: 1024px) {
   .main {
     --size-gap: var(--space-2xl);
