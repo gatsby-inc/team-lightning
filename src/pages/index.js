@@ -57,30 +57,31 @@ const IndexPage = () => {
               placeholder='E. g. "v3.5"'
               onChange={onChange}
               id="imageText"
+              name="imageText"
             />
           </div>
           <fieldset className={styles.format}>
             <legend>Format</legend>
-            <input
-              type="radio"
-              id="landscape"
-              name="format"
-              value="landscape"
-              selected={activeFormat === "landscape"}
-              onChange={selectFormat}
-            />
-            <label htmlFor="landscape" className={styles.pointer}>
+            <label className={styles.pointer}>
+              <input
+                type="radio"
+                id="landscape"
+                name="format"
+                value="landscape"
+                selected={activeFormat === "landscape"}
+                onChange={selectFormat}
+              />
               Landscape
             </label>
-            <input
-              type="radio"
-              id="format-square"
-              name="format"
-              value="square"
-              selected={activeFormat === "square"}
-              onChange={selectFormat}
-            />
-            <label htmlFor="format-square" className={styles.pointer}>
+            <label className={styles.pointer}>
+              <input
+                type="radio"
+                id="format-square"
+                name="format"
+                value="square"
+                selected={activeFormat === "square"}
+                onChange={selectFormat}
+              />
               Square
             </label>
           </fieldset>
@@ -96,9 +97,8 @@ const IndexPage = () => {
               under the hood.
             </p>
             <p>
-              Care about the details?{" "}
-              <Link to="/how/">Find out how this works</Link> and deploy your
-              own image generator by visiting GitHub.
+              <Link to="/how/">Learn more about the details</Link> and deploy
+              your own image generator by visiting GitHub.
             </p>
           </div>
         </div>

@@ -85,6 +85,8 @@
 
 .pointer {
   cursor: pointer;
+  display: flex;
+  gap: var(--space-sm);
 }
 
 .resultWrapper {
