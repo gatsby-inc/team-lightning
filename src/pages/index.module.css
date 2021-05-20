@@ -83,18 +83,20 @@
 
   /* size */
   --size-input: var(--space-3xl);
-  --size-gap: 12px;
+  --size-gap: 24px;
   --size-gutter: var(--space-2xl);
 
   max-width: 1024px;
   margin: 0 auto;
   padding: var(--size-gap);
   font-family: var(--font-body);
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-gap);
 }
 
-/* add spacing between every direct element */
-.main > * + * {
-  margin-bottom: var(--space-lg);
+.main * {
+  box-sizing: border-box;
 }
 
 .input {
@@ -129,7 +131,7 @@
 }
 
 .urlInput {
-  display: block;
+  display: flex;
   width: 100%;
 }
 
@@ -141,10 +143,21 @@
 }
 
 .image {
-  width: 100%;
+  max-width: 100%;
   box-shadow: var(--shadow);
 }
 
 .pointer {
   cursor: pointer;
+}
+
+@media (min-width: 1024px) {
+  .main {
+    --size-gap: var(--space-2xl);
+    flex-direction: row;
+  }
+
+  .uiWrapper {
+    width: 460px;
+  }
 }
