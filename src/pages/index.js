@@ -1,11 +1,11 @@
 import * as React from "react";
 import debounce from "debounce";
-import { Link } from 'gatsby'
+import { Link } from "gatsby";
 import slugify from "@sindresorhus/slugify";
 
 import { Copy } from "../components/copy/copy";
-import { Header } from "../components/header"
-import { Seo } from "../components/seo"
+import { Header } from "../components/header";
+import { Seo } from "../components/seo";
 
 import * as styles from "./index.module.css";
 
@@ -42,7 +42,8 @@ const IndexPage = () => {
 
   return (
     <div>
-      <Seo title="Release Notes Generator"
+      <Seo
+        title="Release Notes Generator"
         description="Gatsby's release notes generator to generate our social sharing cards, powered by Gatsby Cloud Functions"
         image="/api/social-card?text=Release%20Notes%20Generator&format=landscape"
       />
@@ -85,9 +86,15 @@ const IndexPage = () => {
           </fieldset>
           <div className={styles.description}>
             <h3>What is this?</h3>
-            <p>This service generates images that you can use as <code>og:image</code>s to use with the corresponding &lt;meta&gt; tags.</p>
-            <p>It's using Gatsby Cloud Functions under the hood.</p>
-            <p>Find out how this works and deploy your own image generator by visiting GitHub.</p>
+            <p>
+              This service generates images that you can use as{" "}
+              <code>og:image</code>s to use with the corresponding &lt;meta&gt;
+              tags. It's using Gatsby Cloud Functions under the hood.
+            </p>
+            <p>
+              Find out how this works and deploy your own image generator by
+              visiting GitHub.
+            </p>
           </div>
           <div className={styles.description}>
             <h3>How was this built?</h3>
@@ -119,7 +126,12 @@ const IndexPage = () => {
             <Copy className={styles.copy} content={url} />
           </div>
 
-          <a href={`/api/social-card?text=${imageVersion}`} download={`release-${slugify(imageVersion)}.png`}>download me</a>
+          <a
+            href={`/api/social-card?text=${imageVersion}`}
+            download={`release-${slugify(imageVersion)}.png`}
+          >
+            download me
+          </a>
           {/* <input type="submit" className={styles.button} /> */}
           <fieldset className={styles.ogCode}>
             <legend>OG Code</legend>
