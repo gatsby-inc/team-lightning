@@ -89,8 +89,8 @@ const IndexPage = () => {
             <h2 className={styles.heading}>What is this?</h2>
             <p>
               This service generates social media images that can be used as{" "}
-              <code>og:image</code> along the corresponding &lt;meta&gt; tags.
-              It's using{" "}
+              <code>og:image</code> along the corresponding{" "}
+              <code>&lt;meta&gt;</code> tags. It's using{" "}
               <a href="https://gatsbyjs.com/functions">
                 Gatsby Cloud Functions
               </a>{" "}

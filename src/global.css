@@ -101,11 +101,28 @@
   width: 1px;
 }
 
+tt,
 code,
-pre {
+pre,
+tt,
+samp {
   font-family: var(--font-monospace);
 }
 
+tt,
+code,
+kbd {
+  background: #eee;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  border-radius: var(--radius-sm);
+  padding-left: var(--space-sm);
+  padding-right: var(--space-sm);
+  color: var(--black-fade-40);
+  background-color: #fff2a8;
+}
+
+,
 @media (min-width: 1024px) {
   :root {
     --size-gap: var(--space-3xl);
