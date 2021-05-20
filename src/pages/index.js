@@ -20,8 +20,8 @@ const getUrl = (version, format) => {
 // markup
 const IndexPage = () => {
   const [version, setVersion] = React.useState("");
-  const [activeFormat, setActiveFormat] = React.useState("twitter");
-  const [imageVersion, setImageVersion] = React.useState("");
+  const [activeFormat, setActiveFormat] = React.useState("landscape");
+  const [imageVersion, setImageVersion] = React.useState(" todo ");
   const url = getUrl(version, activeFormat);
 
   const requestImage = React.useCallback(
@@ -99,7 +99,7 @@ const IndexPage = () => {
         <div className={styles.resultWrapper}>
           <img
             className={styles.image}
-            src={`/api/social-card?text=${imageVersion}`}
+            src={`/api/social-card?text=${imageVersion}&format=${activeFormat}`}
           />
           <div className={styles.url}>
             <input
