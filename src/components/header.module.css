@@ -10,5 +10,5 @@
   align-items: center;
   max-width: 1240px;
   margin: 0 auto;
-  padding: var(--size-gap);
+  padding: var(--space-2xl) var(--size-gap);
 }
