@@ -85,6 +85,13 @@ const IndexPage = () => {
               Square
             </label>
           </fieldset>
+          <a
+            href={`/api/social-card?text=${imageVersion}&format=${activeFormat}`}
+            download={`release-${slugify(imageVersion)}.png`}
+            className={styles.button}
+          >
+            Download images
+          </a>
           <div className={styles.description}>
             <h2 className={styles.heading}>What is this?</h2>
             <p>
@@ -122,13 +129,6 @@ const IndexPage = () => {
             />
             <Copy className={styles.copy} content={url} />
           </div>
-          <a
-            href={`/api/social-card?text=${imageVersion}&format=${activeFormat}`}
-            download={`release-${slugify(imageVersion)}.png`}
-            className={styles.button}
-          >
-            Download image
-          </a>
           <fieldset
             className={[styles.ogCode]
               .concat(styles.format)

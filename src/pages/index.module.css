@@ -1,5 +1,5 @@
 .main {
-  max-width: 1240px;
+  max-width: 768px;
   margin: 0 auto;
   padding: var(--size-gap);
   font-family: var(--font-body);
@@ -136,9 +136,10 @@
   font-weight: var(--semibold);
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 864px) {
   .main {
     flex-direction: row;
+    max-width: 1240px;
   }
 
   .uiWrapper {
