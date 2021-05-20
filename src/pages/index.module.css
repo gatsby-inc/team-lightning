@@ -64,7 +64,7 @@
 
 .copy {
   position: absolute;
-  right: 0;
+  right: var(--space-md);
   top: 50%;
   transform: translateY(-50%);
 }
