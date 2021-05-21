@@ -132,39 +132,37 @@ const IndexPage = () => {
               className={styles.image}
             />
           )}
-          {version && (
-            <>
-              <div className={styles.url}>
-                <label htmlFor="imageUrl" className="sr-only">
-                  Image URL
-                </label>
-                <input
-                  className={[styles.input].concat(styles.urlInput).join(" ")}
-                  readOnly={true}
-                  value={url}
-                  id="imageUrl"
-                  name="imageUrl"
-                />
-                <Copy className={styles.copy} content={url} />
-              </div>
-              <div className={styles.url}>
-                <label htmlFor="metaOgImage" className="sr-only">
-                  Image URL
-                </label>
-                <input
-                  className={[styles.input].concat(styles.urlInput).join(" ")}
-                  readOnly={true}
-                  value={`<meta property="og:image" content="${url}" />`}
-                  id="metaOgImage"
-                  name="metaOgImage"
-                />
-                <Copy
-                  className={styles.copy}
-                  content={`<meta property="og:image" content="${url}" />`}
-                />
-              </div>
-            </>
-          )}
+          <div className={styles.url}>
+            <label htmlFor="imageUrl" className="sr-only">
+              Image URL
+            </label>
+            <input
+              disabled={!version}
+              className={[styles.input].concat(styles.urlInput).join(" ")}
+              readOnly={true}
+              value={url}
+              id="imageUrl"
+              name="imageUrl"
+            />
+            <Copy className={styles.copy} content={url} />
+          </div>
+          <div className={styles.url}>
+            <label htmlFor="metaOgImage" className="sr-only">
+              Image URL
+            </label>
+            <input
+              disabled={!version}
+              className={[styles.input].concat(styles.urlInput).join(" ")}
+              readOnly={true}
+              value={`<meta property="og:image" content="${url}" />`}
+              id="metaOgImage"
+              name="metaOgImage"
+            />
+            <Copy
+              className={styles.copy}
+              content={`<meta property="og:image" content="${url}" />`}
+            />
+          </div>
         </div>
       </main>
     </div>
