@@ -1,0 +1,9 @@
+.team {
+  display: flex;
+  margin-bottom: var(--space-lg);
+}
+
+.mate {
+  border-radius: 100%;
+  margin-right: var(--space-md);
+}

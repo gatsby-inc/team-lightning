@@ -20,7 +20,6 @@ const getUrl = (version, format) => {
 // markup
 const IndexPage = () => {
   const [version, setVersion] = React.useState("");
-  const [isClient, setIsClient] = React.useState(false);
   const [activeFormat, setActiveFormat] = React.useState("landscape");
   const [imageVersion, setImageVersion] = React.useState("");
   const url = getUrl(version, activeFormat);
@@ -41,9 +40,6 @@ const IndexPage = () => {
     setActiveFormat(e.target.value);
   }, []);
 
-  React.useEffect(() => {
-    setIsClient(true);
-  }, []);
 
   return (
     <div>

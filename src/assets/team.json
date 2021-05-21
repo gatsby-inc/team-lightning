@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Ward Peeters",
+    "image": "./team/ward.jpg"
+  },
+  {
+    "name": "Florian Kissling",
+    "image": "./team/fk.png"
+  },
+  {
+    "name": "Gregory Hardy",
+    "image": "./team/greg.jpg"
+  },
+  {
+    "name": "Sidhartha Chatterjee",
+    "image": "./team/sid.png"
+  },
+  {
+    "name": "Shane Thomas",
+    "image": "./team/shane.jpg"
+  },
+  {
+    "name": "Tyler Barnes",
+    "image": "./team/tyler.jpg"
+  },
+  {
+    "name": "Laci Texter",
+    "image": "./team/laci.png"
+  },
+  {
+    "name": "Dustin Schau",
+    "image": "./team/dustin.jpg"
+  }
+]
