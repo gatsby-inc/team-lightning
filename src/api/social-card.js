@@ -18,7 +18,7 @@ const LANDSCAPE_FORMAT = {
 const SQUARE_FORMAT = {
   background: "square-template.png",
   font: "Inter-ExtraBold.ttf.fnt",
-  textY: 780,
+  textY: 732,
 };
 
 const HOST = getHost();
