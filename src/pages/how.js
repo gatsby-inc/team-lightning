@@ -41,7 +41,7 @@ function How() {
           <div className={prose}>
             <h2>Powered by ⚡ Gatsby Cloud Functions</h2>
             <p>
-              We leverag the dynamic power of{" "}
+              We leverage the dynamic power of{" "}
               <a href="https://gatsbyjs.com/functions">
                 Gatsby Cloud Functions
               </a>{" "}
