@@ -17,7 +17,10 @@ function Highlighter({ code, language = "js", ...props }) {
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <pre
           className={[className].concat(styles.container).join(" ")}
-          style={style}
+          style={{
+            ...style,
+            background: Theme.plain.backgroundColor
+          }}
         >
           {tokens.map((line, i) => (
             <div {...getLineProps({ line, key: i })}>

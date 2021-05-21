@@ -91,7 +91,7 @@ function How() {
             <p>
               A simple serverless function at{" "}
               <a href="https://github.com/gatsby-inc/team-lightning/blob/main/src/api/social-card.js">
-                <pre className={styles.pre}>api/social-card.js</pre>
+                <code className={styles.pre}>api/social-card.js</code>
               </a>{" "}
               is all we need for a robust social sharing card service! The code
               is as follows:
@@ -104,7 +104,7 @@ function How() {
               This function uses the library archiver to download a .zip of
               assets (invoking the previous service to generate the images).
               <a href="https://github.com/gatsby-inc/team-lightning/blob/main/src/api/download-assets.js">
-                <pre className={styles.pre}>api/download-assets.js</pre>
+                <code className={styles.pre}>api/download-assets.js</code>
               </a>
             </p>
             <Highlight code={downloadAssets} />
