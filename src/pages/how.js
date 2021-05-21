@@ -9,12 +9,7 @@ import { Header } from "../components/header";
 import { Highlight } from "../components/highlight";
 import { Container } from "../components/container";
 
-import {
-  main,
-  uiWrapper,
-  resultWrapper,
-  description,
-} from "./index.module.css";
+import { main, uiWrapper, resultWrapper, prose } from "./index.module.css";
 import * as styles from "./how.module.css";
 
 const CodeTitle = ({ title, ...props }) => (
@@ -43,7 +38,7 @@ function How() {
       </Container>
       <main className={main}>
         <div className={uiWrapper}>
-          <div className={description}>
+          <div className={prose}>
             <h2>Powered by ⚡ Gatsby Cloud Functions</h2>
             <p>
               We leveraged the dynamic power of Gatsby Cloud Functions to
@@ -78,7 +73,7 @@ function How() {
           </div>
         </div>
         <div className={resultWrapper}>
-          <div>
+          <div className={prose}>
             <h2>The code</h2>
             <p>There are two main pieces.</p>
             <ol>

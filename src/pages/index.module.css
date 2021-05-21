@@ -23,28 +23,26 @@
   align-items: center;
 }
 
-.description {
-  color: var(--text-color-secondary);
-  margin-top: var(--space-md);
-  padding-top: var(--space-md);
+.prose {
   line-height: var(--default);
 }
 
-.description a {
+.prose a {
   color: var(--primary);
   font-weight: var(--semibold);
   text-decoration: none;
 }
 
-.description a:hover {
+.prose a:hover {
   border-bottom: 1px solid var(--primary);
 }
 
-.description ul {
+.prose ul,
+.prose ol {
   padding-left: 0;
 }
 
-.description li {
+.prose li {
   margin-bottom: var(--space-lg);
 }
 

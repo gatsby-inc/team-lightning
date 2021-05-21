@@ -98,7 +98,8 @@ const IndexPage = () => {
           >
             Download Assets
           </a>
-          <div className={styles.description}>
+          <hr />
+          <div className={styles.prose}>
             <h2 className={styles.heading}>What is this?</h2>
             <p>
               This service uses{" "}
@@ -111,8 +112,7 @@ const IndexPage = () => {
               included via a simple URL API.
             </p>
             <p>
-              <Link to="/how/">Learn more about the details</Link> and deploy
-              your own image generator by visiting GitHub.
+              <Link to="/how/">&rarr; Learn more about the details</Link>
             </p>
           </div>
         </div>
