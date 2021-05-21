@@ -3,6 +3,8 @@ import * as React from "react";
 import Highlight, { defaultProps } from "prism-react-renderer";
 import Theme from "prism-react-renderer/themes/shadesOfPurple";
 
+import * as styles from "./highlight.module.css";
+
 function Highlighter({ code, language = "js", ...props }) {
   return (
     <Highlight
@@ -14,12 +16,8 @@ function Highlighter({ code, language = "js", ...props }) {
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <pre
-          className={className}
-          style={{
-            ...style,
-            padding: `var(--space-2xl)`,
-            borderRadius: `var(--radius-md)`,
-          }}
+          className={[className].concat(styles.container).join(" ")}
+          style={style}
         >
           {tokens.map((line, i) => (
             <div {...getLineProps({ line, key: i })}>
