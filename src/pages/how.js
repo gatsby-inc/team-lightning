@@ -45,7 +45,7 @@ function How() {
               to generate an <code>og-image</code> and social sharing cards for
               the Gatsby Marketing team.
             </p>
-            <h3>Tech stack</h3>
+            <h2>Tech stack</h2>
             <p>Quite simple, really! We're using a few tools, notably:</p>
             <ul>
               <li>
