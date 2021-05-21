@@ -1,6 +1,6 @@
 module.exports = {
   flags: {
-    FUNCTIONS: true
+    FUNCTIONS: true,
   },
   siteMetadata: {
     title: "team-lightning",
@@ -9,6 +9,6 @@ module.exports = {
     "gatsby-plugin-gatsby-cloud",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-image",
-    "gatsby-plugin-sharp"
+    "gatsby-plugin-sharp",
   ],
 };

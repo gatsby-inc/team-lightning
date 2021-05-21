@@ -1,20 +1,23 @@
 import * as React from "react";
-import { StaticImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
 
+import Logo from "!!raw-loader!../images/monogram.svg";
+
+import { container } from "./container.module.css";
 import * as styles from "./header.module.css";
 
 function Header() {
   return (
-    <header>
-      <h1 className={styles.header}>
+    <header className={container}>
+      <h1 className={styles.heading}>
         <Link to="/" className={styles.link}>
-          <StaticImage
-            src="../images/icon.png"
-            alt="Gatsby logo"
+          <span
             className={styles.logo}
+            dangerouslySetInnerHTML={{
+              __html: Logo,
+            }}
           />{" "}
-          Gatsby
+          Image Generator
         </Link>
       </h1>
     </header>

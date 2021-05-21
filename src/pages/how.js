@@ -1,8 +1,13 @@
 import * as React from "react";
 import { Link } from "gatsby";
+import { Seo } from "../components/seo";
 import { FaGithubSquare } from "react-icons/fa";
+
 import socialCard from "!!raw-loader!../api/social-card.js";
 import downloadAssets from "!!raw-loader!../api/download-assets.js";
+import { Header } from "../components/header";
+import { Highlight } from "../components/highlight";
+import { Container } from "../components/container";
 
 import {
   main,
@@ -10,9 +15,6 @@ import {
   resultWrapper,
   description,
 } from "./index.module.css";
-import { Header } from "../components/header";
-import { Highlight } from "../components/highlight";
-
 import * as styles from "./how.module.css";
 
 const CodeTitle = ({ title, ...props }) => (
@@ -29,19 +31,26 @@ const CodeTitle = ({ title, ...props }) => (
 function How() {
   return (
     <>
+      <Seo
+        title="How this was built | Release Notes Generator"
+        description="Gatsby's release notes generator to generate our social sharing cards, powered by Gatsby Cloud Functions"
+        image="/api/social-card?text=Release%20Notes%20Generator&format=landscape"
+      />
       <Header />
+      <Container>
+        <Link to="/">&larr; Back to the generator</Link>
+        <h1>How this was built</h1>
+      </Container>
       <main className={main}>
         <div className={uiWrapper}>
           <div className={description}>
-            <Link to="/">Back to the generator</Link>
-            <h1>How this was built</h1>
             <h2>Powered by ⚡ Gatsby Cloud Functions</h2>
             <p>
               We leveraged the dynamic power of Gatsby Cloud Functions to
-              generate an og-image and social sharing cards for our internal
-              Marketing team.
+              generate an <code>og-image</code> and social sharing cards for our
+              internal Marketing team.
             </p>
-            <h2>Tech stack</h2>
+            <h3>Tech stack</h3>
             <p>Quite simple, really! We're using a few tools, notably:</p>
             <ul>
               <li>
@@ -66,11 +75,6 @@ function How() {
                 and return the stream to the user.
               </li>
             </ul>
-            <p>
-              We leveraged the dynamic power of Gatsby Cloud Functions to
-              generate an <code>og-image</code> and social sharing cards for our
-              internal Marketing team.
-            </p>
           </div>
         </div>
         <div className={resultWrapper}>

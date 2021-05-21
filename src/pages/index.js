@@ -73,7 +73,7 @@ const IndexPage = () => {
                 id="landscape"
                 name="format"
                 value="landscape"
-                selected={activeFormat === "landscape"}
+                checked={activeFormat === "landscape"}
                 onChange={selectFormat}
               />
               Landscape
@@ -84,12 +84,20 @@ const IndexPage = () => {
                 id="format-square"
                 name="format"
                 value="square"
-                selected={activeFormat === "square"}
+                checked={activeFormat === "square"}
                 onChange={selectFormat}
               />
               Square
             </label>
           </fieldset>
+
+          <a
+            disabled={!version}
+            className={styles.button}
+            {...(version && { href: `/api/download-assets?text=${version}` })}
+          >
+            Download Assets
+          </a>
           <div className={styles.description}>
             <h2 className={styles.heading}>What is this?</h2>
             <p>
@@ -120,39 +128,40 @@ const IndexPage = () => {
             <StaticImage
               src="https://teamlightning.gtsb.io/api/social-card?text=todo&amp;format=landscape"
               alt=""
+              className={styles.image}
             />
           )}
-          <div className={styles.url}>
-            <label htmlFor="imageUrl" className="sr-only">
-              Image URL
-            </label>
-            <input
-              className={[styles.input].concat(styles.urlInput).join(" ")}
-              readOnly={true}
-              value={url}
-              id="imageUrl"
-              name="imageUrl"
-            />
-            <Copy className={styles.copy} content={url} />
-          </div>
-
-          <a
-            disabled={!version}
-            className={[styles.button].concat(styles.download).join(" ")}
-            {...(version && { href: `/api/download-assets?text=${version}` })}
-          >
-            Download Assets
-          </a>
-          <fieldset className={styles.ogCode}>
-            <legend>OG Code</legend>
-            <div className={styles.overflow}>
-              <pre
-                dangerouslySetInnerHTML={{
-                  __html: `&lt;meta property="og:image" content="${url}" /&gt;`,
-                }}
-              />
-            </div>
-          </fieldset>
+          {version && (
+            <>
+              <div className={styles.url}>
+                <label htmlFor="imageUrl" className="sr-only">
+                  Image URL
+                </label>
+                <input
+                  className={[styles.input].concat(styles.urlInput).join(" ")}
+                  readOnly={true}
+                  value={url}
+                  id="imageUrl"
+                  name="imageUrl"
+                />
+                <Copy className={styles.copy} content={url} />
+              </div>
+              <fieldset
+                className={[styles.ogCode]
+                  .concat(styles.format)
+                  .concat(styles.input)
+                  .join(" ")}
+              >
+                <div className={styles.overflow}>
+                  <pre
+                    dangerouslySetInnerHTML={{
+                      __html: `&lt;meta property="og:image" content="${url}" /&gt;`,
+                    }}
+                  />
+                </div>
+              </fieldset>
+            </>
+          )}
         </div>
       </main>
     </div>
