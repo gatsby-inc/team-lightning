@@ -41,9 +41,12 @@ function How() {
           <div className={prose}>
             <h2>Powered by ⚡ Gatsby Cloud Functions</h2>
             <p>
-              We leveraged the dynamic power of Gatsby Cloud Functions to
-              generate an <code>og-image</code> and social sharing cards for our
-              internal Marketing team.
+              We leverag the dynamic power of{" "}
+              <a href="https://gatsbyjs.com/functions">
+                Gatsby Cloud Functions
+              </a>{" "}
+              to generate an <code>og-image</code> and social sharing cards for
+              the Gatsby Marketing team.
             </p>
             <h3>Tech stack</h3>
             <p>Quite simple, really! We're using a few tools, notably:</p>
@@ -52,22 +55,22 @@ function How() {
                 <a href="https://www.npmjs.com/package/jimp">
                   <pre className={styles.pre}>Jimp</pre>
                 </a>
-                . An amazing image transformation tool that we use to load in
-                the image, and then position text on the generated image.
+                , an amazing image transformation tool that we use to load in
+                the image, add custom text, and generate the final image.
               </li>
               <li>
                 <a href="https://www.npmjs.com/package/yup">
                   <pre className={styles.pre}>yup</pre>
-                </a>
-                . We leveraged yup to validate the schema and display helpful
-                messages to our consumers of this API.
+                </a>{" "}
+                to validate the schema and display helpful messages to the
+                consumers of this API.
               </li>
               <li>
                 <a href="https://www.npmjs.com/package/archiver">
                   <pre className={styles.pre}>archiver</pre>
-                </a>
-                . We leveraged archiver to generate a .zip of the bundled assets
-                and return the stream to the user.
+                </a>{" "}
+                to generate a .zip of the bundled assets and return the stream
+                to the user to download.
               </li>
             </ul>
           </div>
