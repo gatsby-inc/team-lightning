@@ -33,19 +33,11 @@ function How() {
       />
       <Header />
       <Container>
-        <Link to="/">&larr; Back to the generator</Link>
         <h1>How this was built</h1>
       </Container>
       <main className={main}>
         <div className={uiWrapper}>
           <div className={prose}>
-            <h2>
-              Powered by Gatsby Cloud{" "}
-              <span role="img" aria-label="Flash">
-                ⚡
-              </span>{" "}
-              Functions
-            </h2>
             <p>
               We leverage the dynamic power of{" "}
               <a href="https://gatsbyjs.com/functions">
