@@ -1,11 +1,11 @@
 html,
 body {
+  font-family: var(--font-body);
   margin: 0;
 }
 
 body * {
   box-sizing: border-box;
-  font-family: var(--font-body);
 }
 
 tt,
