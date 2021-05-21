@@ -2,8 +2,11 @@ import * as React from "react";
 import { Link } from "gatsby";
 import { Seo } from "../components/seo";
 import { FaGithubSquare } from "react-icons/fa";
+
 import socialCard from "!!raw-loader!../api/social-card.js";
 import downloadAssets from "!!raw-loader!../api/download-assets.js";
+import { Header } from "../components/header";
+import { Highlight } from "../components/highlight";
 
 import {
   main,
@@ -11,9 +14,6 @@ import {
   resultWrapper,
   description,
 } from "./index.module.css";
-import { Header } from "../components/header";
-import { Highlight } from "../components/highlight";
-
 import * as styles from "./how.module.css";
 
 const CodeTitle = ({ title, ...props }) => (
