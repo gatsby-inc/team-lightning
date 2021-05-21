@@ -147,20 +147,22 @@ const IndexPage = () => {
                 />
                 <Copy className={styles.copy} content={url} />
               </div>
-              <fieldset
-                className={[styles.ogCode]
-                  .concat(styles.format)
-                  .concat(styles.input)
-                  .join(" ")}
-              >
-                <div className={styles.overflow}>
-                  <pre
-                    dangerouslySetInnerHTML={{
-                      __html: `&lt;meta property="og:image" content="${url}" /&gt;`,
-                    }}
-                  />
-                </div>
-              </fieldset>
+              <div className={styles.url}>
+                <label htmlFor="metaOgImage" className="sr-only">
+                  Image URL
+                </label>
+                <input
+                  className={[styles.input].concat(styles.urlInput).join(" ")}
+                  readOnly={true}
+                  value={`<meta property="og:image" content="${url}" />`}
+                  id="metaOgImage"
+                  name="metaOgImage"
+                />
+                <Copy
+                  className={styles.copy}
+                  content={`<meta property="og:image" content="${url}" />`}
+                />
+              </div>
             </>
           )}
         </div>

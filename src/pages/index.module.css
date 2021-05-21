@@ -13,7 +13,7 @@
   font-size: var(--text-md);
   font-weight: var(--medium);
   padding-left: var(--space-lg);
-  padding-right: var(--space-lg);
+  padding-right: 96px;
   height: var(--size-input);
   background: var(--input-background);
   border-radius: var(--radius-md);
@@ -115,11 +115,6 @@
   display: grid;
   gap: var(--space-2xl);
   grid-auto-rows: max-content;
-}
-
-.ogCode {
-  max-width: 100%;
-  min-width: 0;
 }
 
 .overflow {
