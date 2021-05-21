@@ -47,10 +47,10 @@ function How() {
             <h2>Powered by ⚡ Gatsby Cloud Functions</h2>
             <p>
               We leveraged the dynamic power of Gatsby Cloud Functions to
-              generate an og-image and social sharing cards for our internal
-              Marketing team.
+              generate an <code>og-image</code> and social sharing cards for our
+              internal Marketing team.
             </p>
-            <h2>Tech stack</h2>
+            <h3>Tech stack</h3>
             <p>Quite simple, really! We're using a few tools, notably:</p>
             <ul>
               <li>
@@ -75,11 +75,6 @@ function How() {
                 and return the stream to the user.
               </li>
             </ul>
-            <p>
-              We leveraged the dynamic power of Gatsby Cloud Functions to
-              generate an <code>og-image</code> and social sharing cards for our
-              internal Marketing team.
-            </p>
           </div>
         </div>
         <div className={resultWrapper}>
