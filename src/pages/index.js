@@ -93,7 +93,7 @@ const IndexPage = () => {
 
           <a
             disabled={!version}
-            className={[styles.button].concat(styles.download).join(" ")}
+            className={styles.button}
             {...(version && { href: `/api/download-assets?text=${version}` })}
           >
             Download Assets
