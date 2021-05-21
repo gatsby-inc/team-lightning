@@ -1,6 +1,7 @@
 module.exports = {
   flags: {
     FUNCTIONS: true,
+    DEV_SSR: true
   },
   siteMetadata: {
     title: "team-lightning",
