@@ -10,6 +10,11 @@
   margin-bottom: var(--space-lg);
   margin-top: var(--space-3xl);
   padding-bottom: var(--space-lg);
+  font-size: var(--text-xl);
+}
+
+.codeTitle code {
+  color: var(--text-color);
 }
 
 .codeTitle a {

@@ -37,6 +37,7 @@ function How() {
       <main className={main}>
         <div className={uiWrapper}>
           <div className={prose}>
+            <h2>The stack</h2>
             <p>
               We leverage the dynamic power of{" "}
               <a href="https://gatsbyjs.com/functions">
@@ -45,8 +46,8 @@ function How() {
               to generate an <code>og-image</code> and social sharing cards for
               the Gatsby Marketing team.
             </p>
-            <h2>Tech stack</h2>
-            <p>Quite simple, really! We're using a few tools, notably:</p>
+            <h3>What else?</h3>
+            <p>We're using a few tools, notably:</p>
             <ul>
               <li>
                 <a href="https://www.npmjs.com/package/jimp">
