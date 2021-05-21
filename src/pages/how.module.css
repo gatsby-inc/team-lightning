@@ -31,3 +31,12 @@
 .codeTitle svg {
   margin-right: var(--space-sm);
 }
+
+.deploy {
+  text-decoration: none;
+}
+
+.deploy:hover {
+  text-decoration: none;
+  border-bottom: none !important;
+}

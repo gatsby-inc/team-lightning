@@ -1,4 +1,5 @@
 import * as React from "react";
+import { graphql } from 'gatsby'
 import { Seo } from "../components/seo";
 import { FaGithub } from "react-icons/fa";
 
@@ -7,6 +8,7 @@ import downloadAssets from "!!raw-loader!../api/download-assets.js";
 import { Header } from "../components/header";
 import { Highlight } from "../components/highlight";
 import { Container } from "../components/container";
+import { Team } from '../components/team'
 
 import { main, uiWrapper, resultWrapper, prose } from "./index.module.css";
 import * as styles from "./how.module.css";
@@ -22,7 +24,7 @@ const CodeTitle = ({ title, ...props }) => (
   </h3>
 );
 
-function How() {
+function How({ data: { team }}) {
   return (
     <>
       <Seo
@@ -71,6 +73,14 @@ function How() {
                 to the user to download.
               </li>
             </ul>
+            <h2>The team</h2>
+            <p>This project was built by <strong>{team.totalCount}</strong> team members in a <strong>four hour period</strong> as part of an internal hackathon. It goes to show you can achieve pretty sophisticated results with the power of Gatsby Functions.</p>
+            <Team mates={team.nodes} />
+            <h2>Build it yourself</h2>
+            <p>Want to try it out yourself? Go for it! Tweak to your heart's content, and customize to <em>your</em> needs!</p>
+            <p>
+              <a href="https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsby-inc/team-lightning" title="Deploy to Gatsby Cloud" className={styles.deploy}><img src="https://camo.githubusercontent.com/fda7a8fe64d0351d9eb4aff4446b92368c7d5d9a55889fd16041eb393c5a697d/68747470733a2f2f7777772e6761747362796a732e636f6d2f6465706c6f796e6f772e737667" /></a>
+            </p>
           </div>
         </div>
         <div className={resultWrapper}>
@@ -116,3 +126,14 @@ function How() {
 }
 
 export default How;
+
+export const query = graphql`
+  {
+    team: allTeamJson(sort: {fields: name, order: ASC}) {
+      totalCount
+      nodes {
+        ...TeamDetails
+      }
+    }
+  }
+`
