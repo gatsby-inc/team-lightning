@@ -128,6 +128,7 @@ const IndexPage = () => {
             <StaticImage
               src="https://teamlightning.gtsb.io/api/social-card?text=todo&amp;format=landscape"
               alt=""
+              className={styles.image}
             />
           )}
           {version && (
