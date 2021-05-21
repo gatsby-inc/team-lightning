@@ -1,3 +1,9 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .heading {
   margin: 0;
 }
@@ -20,4 +26,17 @@
   height: var(--space-2xl);
   width: var(--space-2xl);
   margin-right: var(--space-md);
+}
+
+.plug {
+  margin: 0;
+}
+
+.plug a {
+  text-decoration: none;
+  font-weight: var(--semibold);
+}
+
+.plug a:hover {
+  border-bottom: 1px solid var(--primary);
 }

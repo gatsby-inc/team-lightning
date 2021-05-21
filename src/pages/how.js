@@ -1,7 +1,6 @@
 import * as React from "react";
-import { Link } from "gatsby";
 import { Seo } from "../components/seo";
-import { FaGithubSquare } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 
 import socialCard from "!!raw-loader!../api/social-card.js";
 import downloadAssets from "!!raw-loader!../api/download-assets.js";
@@ -14,11 +13,11 @@ import * as styles from "./how.module.css";
 
 const CodeTitle = ({ title, ...props }) => (
   <h3 className={styles.codeTitle} {...props}>
-    <pre className={styles.pre}>{title}</pre>
+    <code>{title}</code>
     <a
       href={`https://github.com/gatsby-inc/team-lightning/blob/main/src/${title}`}
     >
-      <FaGithubSquare size={24} /> Source
+      <FaGithub size={16} /> Source
     </a>
   </h3>
 );
@@ -33,13 +32,12 @@ function How() {
       />
       <Header />
       <Container>
-        <Link to="/">&larr; Back to the generator</Link>
         <h1>How this was built</h1>
       </Container>
       <main className={main}>
         <div className={uiWrapper}>
           <div className={prose}>
-            <h2>Powered by ⚡ Gatsby Cloud Functions</h2>
+            <h2>The stack</h2>
             <p>
               We leverage the dynamic power of{" "}
               <a href="https://gatsbyjs.com/functions">
@@ -48,8 +46,8 @@ function How() {
               to generate an <code>og-image</code> and social sharing cards for
               the Gatsby Marketing team.
             </p>
-            <h3>Tech stack</h3>
-            <p>Quite simple, really! We're using a few tools, notably:</p>
+            <h3>What else?</h3>
+            <p>We're using a few tools, notably:</p>
             <ul>
               <li>
                 <a href="https://www.npmjs.com/package/jimp">
@@ -81,12 +79,12 @@ function How() {
             <p>There are two main pieces.</p>
             <ol>
               <li>
-                <pre className={styles.pre}>api/social-card.js</pre>: An API
-                that will generate a social card for OG images
+                <code>api/social-card.js</code>: An API that will generate a
+                social card for OG images
               </li>
               <li>
-                <pre className={styles.pre}>api/download-assets.js</pre>: An API
-                to return a .zip file with bundled assets (for social sharing)
+                <code>api/download-assets.js</code>: An API to return a .zip
+                file with bundled assets (for social sharing)
               </li>
             </ol>
             <CodeTitle title="api/social-card.js" />

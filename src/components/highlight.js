@@ -1,13 +1,13 @@
 import * as React from "react";
 
 import Highlight, { defaultProps } from "prism-react-renderer";
-import Okadia from "prism-react-renderer/themes/okaidia";
+import Theme from "prism-react-renderer/themes/shadesOfPurple";
 
 function Highlighter({ code, language = "js", ...props }) {
   return (
     <Highlight
       {...defaultProps}
-      theme={Okadia}
+      theme={Theme}
       code={code}
       language={language}
       {...props}

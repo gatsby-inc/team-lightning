@@ -50,7 +50,7 @@ const IndexPage = () => {
       <Seo
         title="Release Notes Generator"
         description="Gatsby's release notes generator to generate our social sharing cards, powered by Gatsby Cloud Functions"
-        image="/api/social-card?text=Release%20Notes%20Generator&format=landscape"
+        image="/api/social-card?text=Image%20Generator&format=landscape"
       />
       <Header />
       <main className={styles.main}>
