@@ -1,7 +1,6 @@
 import * as React from "react";
-import { Link } from "gatsby";
 import { Seo } from "../components/seo";
-import { FaGithubSquare } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 
 import socialCard from "!!raw-loader!../api/social-card.js";
 import downloadAssets from "!!raw-loader!../api/download-assets.js";
@@ -14,11 +13,11 @@ import * as styles from "./how.module.css";
 
 const CodeTitle = ({ title, ...props }) => (
   <h3 className={styles.codeTitle} {...props}>
-    <pre className={styles.pre}>{title}</pre>
+    <code>{title}</code>
     <a
       href={`https://github.com/gatsby-inc/team-lightning/blob/main/src/${title}`}
     >
-      <FaGithubSquare size={24} /> Source
+      <FaGithub size={16} /> Source
     </a>
   </h3>
 );
@@ -79,12 +78,12 @@ function How() {
             <p>There are two main pieces.</p>
             <ol>
               <li>
-                <pre className={styles.pre}>api/social-card.js</pre>: An API
-                that will generate a social card for OG images
+                <code>api/social-card.js</code>: An API that will generate a
+                social card for OG images
               </li>
               <li>
-                <pre className={styles.pre}>api/download-assets.js</pre>: An API
-                to return a .zip file with bundled assets (for social sharing)
+                <code>api/download-assets.js</code>: An API to return a .zip
+                file with bundled assets (for social sharing)
               </li>
             </ol>
             <CodeTitle title="api/social-card.js" />

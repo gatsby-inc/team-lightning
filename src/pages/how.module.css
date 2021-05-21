@@ -4,19 +4,25 @@
   margin: 0;
 }
 
+.codeTitle {
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  margin-bottom: var(--space-lg);
+  margin-top: var(--space-3xl);
+  padding-bottom: var(--space-lg);
+}
+
 .codeTitle a {
-  float: right;
-  display: inline-flex;
-  justify-content: flex-end;
   align-items: center;
+  border-bottom: 1px solid transparent;
   color: var(--purple-next);
+  display: inline-flex;
+  font-size: var(--text-md);
+  font-weight: var(--medium);
+  margin-left: auto;
   text-decoration: none;
 }
 
-.codeTitle a:hover {
-  text-decoration: underline;
-}
-
 .codeTitle svg {
-  margin-right: var(--space-md);
+  margin-right: var(--space-sm);
 }
