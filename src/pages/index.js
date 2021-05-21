@@ -1,7 +1,7 @@
 import * as React from "react";
 import debounce from "debounce";
 import { Link } from "gatsby";
-import slugify from "@sindresorhus/slugify";
+import { StaticImage } from "gatsby-plugin-image";
 
 import { Copy } from "../components/copy/copy";
 import { Header } from "../components/header";
@@ -20,8 +20,9 @@ const getUrl = (version, format) => {
 // markup
 const IndexPage = () => {
   const [version, setVersion] = React.useState("");
+  const [isClient, setIsClient] = React.useState(false);
   const [activeFormat, setActiveFormat] = React.useState("landscape");
-  const [imageVersion, setImageVersion] = React.useState(" todo ");
+  const [imageVersion, setImageVersion] = React.useState("");
   const url = getUrl(version, activeFormat);
 
   const requestImage = React.useCallback(
@@ -38,6 +39,10 @@ const IndexPage = () => {
 
   const selectFormat = React.useCallback((e) => {
     setActiveFormat(e.target.value);
+  }, []);
+
+  React.useEffect(() => {
+    setIsClient(true);
   }, []);
 
   return (
@@ -85,12 +90,13 @@ const IndexPage = () => {
               Square
             </label>
           </fieldset>
+
           <a
-            href={`/api/social-card?text=${imageVersion}&format=${activeFormat}`}
-            download={`release-${slugify(imageVersion)}.png`}
-            className={styles.button}
+            disabled={!version}
+            className={[styles.button].concat(styles.download).join(" ")}
+            {...(version && { href: `/api/download-assets?text=${version}` })}
           >
-            Download images
+            Download Assets
           </a>
           <div className={styles.description}>
             <h2 className={styles.heading}>What is this?</h2>
@@ -110,12 +116,20 @@ const IndexPage = () => {
           </div>
         </div>
         <div className={styles.resultWrapper}>
-          <img
-            className={styles.image}
-            src={`/api/social-card?text=${imageVersion}&format=${activeFormat}`}
-            alt=""
-          />
-
+          {version ? (
+            <img
+              className={styles.image}
+              src={`/api/social-card?text=${
+                imageVersion || " "
+              }&format=${activeFormat}`}
+              alt=""
+            />
+          ) : (
+            <StaticImage
+              src="https://teamlightning.gtsb.io/api/social-card?text=todo&amp;format=landscape"
+              alt=""
+            />
+          )}
           <div className={styles.url}>
             <label htmlFor="imageUrl" className="sr-only">
               Image URL
@@ -135,7 +149,6 @@ const IndexPage = () => {
               .concat(styles.input)
               .join(" ")}
           >
-            <legend className="sr-only">OG Code</legend>
             <div className={styles.overflow}>
               <pre
                 dangerouslySetInnerHTML={{

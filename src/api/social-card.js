@@ -2,6 +2,8 @@ import fetch from "node-fetch";
 import Jimp from "jimp";
 import * as yup from "yup";
 
+import getHost from "../lib/get-host";
+
 const schema = yup.object().shape({
   text: yup.string().required(),
   format: yup.string().required(),
@@ -19,12 +21,7 @@ const SQUARE_FORMAT = {
   textY: 780,
 };
 
-const HOST =
-  process.env.NODE_ENV === "production"
-    ? process.env.PRODUCTION_HOST
-      ? process.env.PRODUCTION_HOST
-      : "https://teamlightning.gatsbyjs.io/"
-    : "http://localhost:8000/";
+const HOST = getHost();
 
 export default async function socialCard(req, res) {
   try {
@@ -37,9 +34,9 @@ export default async function socialCard(req, res) {
       options = SQUARE_FORMAT;
     }
 
-    const font = await Jimp.loadFont(`${HOST}${options.font}`);
+    const font = await Jimp.loadFont(`${HOST}/${options.font}`);
 
-    const imageRes = await fetch(`${HOST}${options.background}`);
+    const imageRes = await fetch(`${HOST}/${options.background}`);
     const imageBuffer = await imageRes.buffer();
 
     let modifiedImage = await Jimp.read(imageBuffer);
@@ -66,7 +63,7 @@ export default async function socialCard(req, res) {
       .status(200)
       .send(await modifiedImage.getBufferAsync(Jimp.MIME_PNG));
   } catch (e) {
-    console.error(e)
+    console.error(e);
     return res.status(500).json({
       message: e.message,
       stack: e.stack,

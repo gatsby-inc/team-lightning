@@ -3,3 +3,20 @@
   padding: 0;
   margin: 0;
 }
+
+.codeTitle a {
+  float: right;
+  display: inline-flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: var(--purple-next);
+  text-decoration: none;
+}
+
+.codeTitle a:hover {
+  text-decoration: underline;
+}
+
+.codeTitle svg {
+  margin-right: var(--space-md);
+}
