@@ -2,8 +2,9 @@ import * as React from "react";
 import { Link } from "gatsby";
 import Highlight, { defaultProps } from "prism-react-renderer";
 import Okadia from "prism-react-renderer/themes/okaidia";
-import text from "!!raw-loader!../api/social-card.js";
+import { Seo } from "../components/seo";
 
+import text from "!!raw-loader!../api/social-card.js";
 import {
   main,
   uiWrapper,
@@ -17,6 +18,11 @@ import * as styles from "./how.module.css";
 function How() {
   return (
     <>
+      <Seo
+        title="How this was built | Release Notes Generator"
+        description="Gatsby's release notes generator to generate our social sharing cards, powered by Gatsby Cloud Functions"
+        image="/api/social-card?text=Release%20Notes%20Generator&format=landscape"
+      />
       <Header />
       <main className={main}>
         <div className={uiWrapper}>
