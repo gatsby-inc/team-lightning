@@ -5,6 +5,7 @@ body {
 
 body * {
   box-sizing: border-box;
+  font-family: var(--font-body);
 }
 
 tt,

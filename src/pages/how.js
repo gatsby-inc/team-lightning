@@ -7,6 +7,7 @@ import socialCard from "!!raw-loader!../api/social-card.js";
 import downloadAssets from "!!raw-loader!../api/download-assets.js";
 import { Header } from "../components/header";
 import { Highlight } from "../components/highlight";
+import { Container } from "../components/container";
 
 import {
   main,
@@ -36,11 +37,13 @@ function How() {
         image="/api/social-card?text=Release%20Notes%20Generator&format=landscape"
       />
       <Header />
+      <Container>
+        <Link to="/">&larr; Back to the generator</Link>
+        <h1>How this was built</h1>
+      </Container>
       <main className={main}>
         <div className={uiWrapper}>
           <div className={description}>
-            <Link to="/">&larr; Back to the generator</Link>
-            <h1>How this was built</h1>
             <h2>Powered by ⚡ Gatsby Cloud Functions</h2>
             <p>
               We leveraged the dynamic power of Gatsby Cloud Functions to

@@ -1,7 +1,7 @@
 .main {
   max-width: 768px;
   margin: 0 auto;
-  padding: var(--size-gap);
+  padding: var(--space-xl) var(--size-gap);
   font-family: var(--font-body);
   display: flex;
   flex-direction: column;
