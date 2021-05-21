@@ -130,33 +130,37 @@ const IndexPage = () => {
               alt=""
             />
           )}
-          <div className={styles.url}>
-            <label htmlFor="imageUrl" className="sr-only">
-              Image URL
-            </label>
-            <input
-              className={[styles.input].concat(styles.urlInput).join(" ")}
-              readOnly={true}
-              value={url}
-              id="imageUrl"
-              name="imageUrl"
-            />
-            <Copy className={styles.copy} content={url} />
-          </div>
-          <fieldset
-            className={[styles.ogCode]
-              .concat(styles.format)
-              .concat(styles.input)
-              .join(" ")}
-          >
-            <div className={styles.overflow}>
-              <pre
-                dangerouslySetInnerHTML={{
-                  __html: `&lt;meta property="og:image" content="${url}" /&gt;`,
-                }}
-              />
-            </div>
-          </fieldset>
+          {version && (
+            <>
+              <div className={styles.url}>
+                <label htmlFor="imageUrl" className="sr-only">
+                  Image URL
+                </label>
+                <input
+                  className={[styles.input].concat(styles.urlInput).join(" ")}
+                  readOnly={true}
+                  value={url}
+                  id="imageUrl"
+                  name="imageUrl"
+                />
+                <Copy className={styles.copy} content={url} />
+              </div>
+              <fieldset
+                className={[styles.ogCode]
+                  .concat(styles.format)
+                  .concat(styles.input)
+                  .join(" ")}
+              >
+                <div className={styles.overflow}>
+                  <pre
+                    dangerouslySetInnerHTML={{
+                      __html: `&lt;meta property="og:image" content="${url}" /&gt;`,
+                    }}
+                  />
+                </div>
+              </fieldset>
+            </>
+          )}
         </div>
       </main>
     </div>
