@@ -27,7 +27,7 @@ function How() {
       <main className={main}>
         <div className={uiWrapper}>
           <div className={description}>
-            <Link to="/">Back to the generator</Link>
+            <Link to="/">&larr; Back to the generator</Link>
             <h1>How this was built</h1>
             <h2>Powered by ⚡ Gatsby Cloud Functions</h2>
             <p>
