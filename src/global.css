@@ -1,11 +1,11 @@
 html,
 body {
+  font-family: var(--font-body);
   margin: 0;
 }
 
 body * {
   box-sizing: border-box;
-  font-family: var(--font-body);
 }
 
 tt,
@@ -29,6 +29,10 @@ kbd {
   font-size: 94%;
 }
 
+.prism-code {
+  font-size: 90%;
+}
+
 .sr-only {
   border: 0;
   clip: rect(0, 0, 0, 0);
@@ -38,4 +42,23 @@ kbd {
   padding: 0;
   position: absolute;
   width: 1px;
+}
+
+hr {
+  margin: 1rem 0;
+  color: inherit;
+  background-color: currentColor;
+  border: 0;
+  opacity: 0.25;
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  line-height: var(--dense);
 }

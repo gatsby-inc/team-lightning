@@ -98,20 +98,21 @@ const IndexPage = () => {
           >
             Download Assets
           </a>
-          <div className={styles.description}>
+          <hr />
+          <div className={styles.prose}>
             <h2 className={styles.heading}>What is this?</h2>
             <p>
-              This service generates social media images that can be used as{" "}
-              <code>og:image</code> along the corresponding{" "}
-              <code>&lt;meta&gt;</code> tags. It's using{" "}
+              This service uses{" "}
               <a href="https://gatsbyjs.com/functions">
                 Gatsby Cloud Functions
               </a>{" "}
-              under the hood.
+              to generate social media images that can be used as{" "}
+              <code>og:image</code> along the corresponding{" "}
+              <code>&lt;meta&gt;</code> tags. Images can be downloaded or
+              included via a simple URL API.
             </p>
             <p>
-              <Link to="/how/">Learn more about the details</Link> and deploy
-              your own image generator by visiting GitHub.
+              <Link to="/how/">&rarr; Learn more about the details</Link>
             </p>
           </div>
         </div>
@@ -131,37 +132,37 @@ const IndexPage = () => {
               className={styles.image}
             />
           )}
-          {version && (
-            <>
-              <div className={styles.url}>
-                <label htmlFor="imageUrl" className="sr-only">
-                  Image URL
-                </label>
-                <input
-                  className={[styles.input].concat(styles.urlInput).join(" ")}
-                  readOnly={true}
-                  value={url}
-                  id="imageUrl"
-                  name="imageUrl"
-                />
-                <Copy className={styles.copy} content={url} />
-              </div>
-              <fieldset
-                className={[styles.ogCode]
-                  .concat(styles.format)
-                  .concat(styles.input)
-                  .join(" ")}
-              >
-                <div className={styles.overflow}>
-                  <pre
-                    dangerouslySetInnerHTML={{
-                      __html: `&lt;meta property="og:image" content="${url}" /&gt;`,
-                    }}
-                  />
-                </div>
-              </fieldset>
-            </>
-          )}
+          <div className={styles.url}>
+            <label htmlFor="imageUrl" className="sr-only">
+              Image URL
+            </label>
+            <input
+              disabled={!version}
+              className={[styles.input].concat(styles.urlInput).join(" ")}
+              readOnly={true}
+              value={url}
+              id="imageUrl"
+              name="imageUrl"
+            />
+            <Copy className={styles.copy} content={url} />
+          </div>
+          <div className={styles.url}>
+            <label htmlFor="metaOgImage" className="sr-only">
+              Image URL
+            </label>
+            <input
+              disabled={!version}
+              className={[styles.input].concat(styles.urlInput).join(" ")}
+              readOnly={true}
+              value={`<meta property="og:image" content="${url}" />`}
+              id="metaOgImage"
+              name="metaOgImage"
+            />
+            <Copy
+              className={styles.copy}
+              content={`<meta property="og:image" content="${url}" />`}
+            />
+          </div>
         </div>
       </main>
     </div>
